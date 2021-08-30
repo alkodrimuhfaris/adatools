@@ -1,71 +1,74 @@
-import React from 'react'
-import BootstrapTable from 'react-bootstrap-table-next';
-import { useSelector } from 'react-redux';
+import React from "react";
+import BootstrapTable from "react-bootstrap-table-next";
+import { useSelector } from "react-redux";
+import getData from "../../dto/getData";
+import ChartGraph from "../../component/ChartGraph";
+import TypeChooser from "react-stockcharts/lib/helper/TypeChooser";
 
 export default function PairExplorerBsc() {
   const { theme } = useSelector((state) => state.theme);
-
+  const datas = getData();
   const columns = [
     {
-      dataField: 'date',
-      text: 'Date',
+      dataField: "date",
+      text: "Date",
       sort: true,
-      headerClasses: 'border-dark-purple',
-      classes: 'border-dark-purple text-center'
-    }, 
+      headerClasses: "border-dark-purple",
+      classes: "border-dark-purple text-center",
+    },
     {
-      dataField: 'type',
-      text: 'Type',
+      dataField: "type",
+      text: "Type",
       sort: true,
-      headerClasses: 'border-dark-purple',
-      classes: 'border-dark-purple text-center',
+      headerClasses: "border-dark-purple",
+      classes: "border-dark-purple text-center",
       formatter: (cell, row) => {
-        if (cell === 'Sell') return <div className="text-red">{cell}</div>
-        return <div className="text-green">{cell}</div>
-      }
+        if (cell === "Sell") return <div className="text-red">{cell}</div>;
+        return <div className="text-green">{cell}</div>;
+      },
     },
     {
-      dataField: 'priceUSD',
-      text: 'Price USD',
+      dataField: "priceUSD",
+      text: "Price USD",
       sort: true,
-      headerClasses: 'border-dark-purple',
-      classes: 'border-dark-purple',
-    }, 
-    {
-      dataField: 'priceBNB',
-      text: 'Price BNB',
-      sort: true,
-      headerClasses: 'border-dark-purple',
-      classes: 'border-dark-purple',
-    }, 
-    {
-      dataField: 'amount',
-      text: 'Amount ADAT',
-      sort: true,
-      classes: 'border-dark-purple',
-      headerClasses: 'border-dark-purple'
-    }, 
-    {
-      dataField: 'totalBNB',
-      text: 'totalBNB',
-      sort: true,
-      classes: 'border-dark-purple',
-      headerClasses: 'border-dark-purple'
-    }, 
-    {
-      dataField: 'maker',
-      text: 'MAKER',
-      sort: true,
-      classes: 'border-dark-purple',
-      headerStyle: { textAlign: 'center' },
-      headerClasses: 'border-dark-purple text-center',
+      headerClasses: "border-dark-purple",
+      classes: "border-dark-purple",
     },
     {
-      dataField: 'id',
-      text: 'Others',
-      headerClasses: 'border-dark-purple',
-      classes: 'border-dark-purple',
-      headerStyle: { textAlign: 'center' },
+      dataField: "priceBNB",
+      text: "Price BNB",
+      sort: true,
+      headerClasses: "border-dark-purple",
+      classes: "border-dark-purple",
+    },
+    {
+      dataField: "amount",
+      text: "Amount ADAT",
+      sort: true,
+      classes: "border-dark-purple",
+      headerClasses: "border-dark-purple",
+    },
+    {
+      dataField: "totalBNB",
+      text: "totalBNB",
+      sort: true,
+      classes: "border-dark-purple",
+      headerClasses: "border-dark-purple",
+    },
+    {
+      dataField: "maker",
+      text: "MAKER",
+      sort: true,
+      classes: "border-dark-purple",
+      headerStyle: { textAlign: "center" },
+      headerClasses: "border-dark-purple text-center",
+    },
+    {
+      dataField: "id",
+      text: "Others",
+      headerClasses: "border-dark-purple",
+      classes: "border-dark-purple",
+      headerStyle: { textAlign: "center" },
       formatter: () => {
         return (
           <div className="d-flex justify-content-between">
@@ -82,271 +85,269 @@ export default function PairExplorerBsc() {
               <img src="/assets/icons/32.svg" alt="icon" />
             </div>
           </div>
-        )
-      }
+        );
+      },
     },
-    ];
-  
+  ];
 
   const data = [
     {
       id: 1,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '1,2888.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "1,2888.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 2,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 3,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 4,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 5,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 6,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 7,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 8,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 9,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 10,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 11,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 12,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 13,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 14,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 15,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 16,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 17,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 18,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 19,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 20,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 21,
-      date: '2021-08-04 19:55:00',
-      type: 'Buy',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Buy",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 22,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
     {
       id: 23,
-      date: '2021-08-04 19:55:00',
-      type: 'Sell',
-      priceUSD: '$0.28029358',
-      priceBNB: '$0.26103948',
-      amount: '0.00019201.32',
-      totalBNB: '$0.289301',
-      maker: '0xske374...6631'
+      date: "2021-08-04 19:55:00",
+      type: "Sell",
+      priceUSD: "$0.28029358",
+      priceBNB: "$0.26103948",
+      amount: "0.00019201.32",
+      totalBNB: "$0.289301",
+      maker: "0xske374...6631",
     },
-  ]
-  
-  
+  ];
+
   return (
     <div className={`body-body pb-5 ${theme}`}>
-
       <div className="container">
         <div className="d-flex justify-content-between align-items-center pt-4">
-          <h6 className="text-white">PANCAKESWAP SWAP {'>'} 
-            <span className="text-blue ">
-              PAIR EXPLORER
-            </span>
+          <h6 className="text-white">
+            PANCAKESWAP SWAP {">"}
+            <span className="text-blue ">PAIR EXPLORER</span>
           </h6>
           <div className="search-wrapper">
             <div className="refresh-div-search">
               <span className="material-icons refresh-icon">autorenew</span>
             </div>
             <div className="input-wrapper">
-              <input type="text" className="form-control input-dark " placeholder="Search pair" />
+              <input
+                type="text"
+                className="form-control input-dark "
+                placeholder="Search pair"
+              />
               <i className="material-icons">search</i>
             </div>
           </div>
         </div>
-        
+
         <div className="row py-3">
-
           <div className="col-5">
-
             <div className="d-flex justify-content-end">
               <div className="icons-tab">
                 <i className="material-icons me-2">share</i>
@@ -363,18 +364,21 @@ export default function PairExplorerBsc() {
                 <div className="card-adat-right card-title">
                   <div>
                     <p className="text">
-                      WBNB / 
-                      <span className="fw-bolder">ADAT</span>
+                      WBNB /<span className="fw-bolder">ADAT</span>
                     </p>
                     <span className="sub-text">(ADATools)</span>
                   </div>
-                  
+
                   <div className="text-2">
                     <p className="text-white">Token contract: </p>
                     <p className="blue-color ms-2">0xfb7b45...c75a </p>
-                    <i className="material-icons blue-color pointer">content_copy</i>
+                    <i className="material-icons blue-color pointer">
+                      content_copy
+                    </i>
                     <p className="text-white">- Pair</p>
-                    <i className="material-icons blue-color pointer">content_copy</i>
+                    <i className="material-icons blue-color pointer">
+                      content_copy
+                    </i>
                   </div>
 
                   <hr />
@@ -386,7 +390,7 @@ export default function PairExplorerBsc() {
                     <div className="icon-wrapper-table mx-2 pointer">
                       <img src="/assets/icons/babydb.png" alt="icon" />
                     </div>
-                    
+
                     <div className="icon-wrapper-table mx-2 pointer">
                       <img src="/assets/icons/07.svg" alt="icon" />
                     </div>
@@ -397,13 +401,11 @@ export default function PairExplorerBsc() {
                       <img src="/assets/icons/21.svg" alt="icon" />
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
 
             <div className="d-flex justify-content-between">
-
               <div className="favorites">
                 <div className="card card-dark card-favorites">
                   <div className="card-body">
@@ -420,7 +422,10 @@ export default function PairExplorerBsc() {
                       </div>
                       <div className="d-flex justify-content-between selected">
                         <p className="fw-bolder">RALPH</p>
-                        <p>$0.04003121 <span className="x-code color-aqua">x</span> </p>
+                        <p>
+                          $0.04003121{" "}
+                          <span className="x-code color-aqua">x</span>{" "}
+                        </p>
                       </div>
                       <div className="d-flex justify-content-between">
                         <p className="fw-bolder">SOTU</p>
@@ -438,7 +443,6 @@ export default function PairExplorerBsc() {
               <div className="info">
                 <div className="card card-dark card-info-code">
                   <div className="card-body">
-
                     <div className="centering-element">
                       <h4 className="fw-bolder">$0.27772691</h4>
                       <i className="material-icons up ms-2 f20">double_arrow</i>
@@ -484,84 +488,93 @@ export default function PairExplorerBsc() {
                         <p className="fw-bolder mb-2">Diluted market cap:</p>
                         <p>$3,300,722,40</p>
                       </div>
-                      <div className="text-center color-aqua">View more info</div>
+                      <div className="text-center color-aqua">
+                        View more info
+                      </div>
                     </div>
-
                   </div>
                 </div>
               </div>
-
             </div>
-
           </div>
 
           <div className="col-7">
-            <div className="card" style={{ border: '1px solid #1b0f23', borderRadius: 25, backgroundColor: '#1b0f23', marginTop: 30 }}>
+            <div
+              className="card"
+              style={{
+                border: "1px solid #1b0f23",
+                borderRadius: 25,
+                backgroundColor: "#1b0f23",
+                marginTop: 30,
+              }}
+            >
               <div className="card-body">
-                <img src="/assets/charts_img.png" alt="charts" style={{ border: 'none', width: '100%' }} />
+                <TypeChooser>
+                  {(type) => {
+                    <ChartGraph type={type} data={datas} />;
+                  }}
+                </TypeChooser>
               </div>
             </div>
           </div>
-
         </div>
 
         <div className="d-flex justify-content-between">
-
           <div className="contract-detail w200px">
             {/* contract detail  */}
             <div className="card card-dark mb-3">
               <div className="card-body">
                 <p className="fw-bolder">Contract Details</p>
                 <div className="mt-2 d-flex justify-content-start">
-                <div className="icon-wrapper-table ">
-                  <img src="/assets/icons/21.svg" alt="icon" />
+                  <div className="icon-wrapper-table ">
+                    <img src="/assets/icons/21.svg" alt="icon" />
+                  </div>
+                  <div className="icon-wrapper-table mx-2">
+                    <img src="/assets/icons/20.svg" alt="icon" />
+                  </div>
+                  <div className="icon-wrapper-table me-2">
+                    <img src="/assets/icons/19.svg" alt="icon" />
+                  </div>
+                  <div className="icon-wrapper-table">
+                    <img src="/assets/icons/18.svg" alt="icon" />
+                  </div>
                 </div>
-                <div className="icon-wrapper-table mx-2">
-                  <img src="/assets/icons/20.svg" alt="icon" />
-                </div>
-                <div className="icon-wrapper-table me-2">
-                  <img src="/assets/icons/19.svg" alt="icon" />
-                </div>
-                <div className="icon-wrapper-table">
-                  <img src="/assets/icons/18.svg" alt="icon" />
-                </div>
-              </div>
 
-              <hr />
+                <hr />
 
-              <div className="d-flex">
-                <p className="fw-bolder me-2 mb-2">Community Trust</p>
-                <i className="material-icons color-purple ask-small">help</i>
-              </div>
-
-              <div className="d-flex">
-                <div className="sip-ic">
-                  <i className="material-icons">thumb_up</i>
+                <div className="d-flex">
+                  <p className="fw-bolder me-2 mb-2">Community Trust</p>
+                  <i className="material-icons color-purple ask-small">help</i>
                 </div>
-                <div className="hr-wrapper">
-                  <hr />
+
+                <div className="d-flex">
+                  <div className="sip-ic">
+                    <i className="material-icons">thumb_up</i>
+                  </div>
+                  <div className="hr-wrapper">
+                    <hr />
+                  </div>
+                  <div className="sip-ic">
+                    <i className="material-icons">thumb_down</i>
+                  </div>
                 </div>
-                <div className="sip-ic">
-                  <i className="material-icons">thumb_down</i>
+
+                <div className="d-flex justify-content-between">
+                  <p className="text-grey">95%</p>
+                  <p className="text-grey">(545 votes)</p>
+                  <p className="text-grey">5%</p>
                 </div>
-              </div>
-
-              <div className="d-flex justify-content-between">
-                <p className="text-grey">95%</p>
-                <p className="text-grey">(545 votes)</p>
-                <p className="text-grey">5%</p>
-              </div>
-
-
               </div>
             </div>
-          
+
             {/* adat score  */}
             <div className="card card-dark mb-3">
               <div className="card-body">
                 <div className="d-flex justify-content-between">
-                  <h5 >ADAT <span className="fw-bolder">SCORE</span> </h5>
-                  <h5 >99</h5>
+                  <h5>
+                    ADAT <span className="fw-bolder">SCORE</span>{" "}
+                  </h5>
+                  <h5>99</h5>
                 </div>
 
                 <hr />
@@ -591,12 +604,13 @@ export default function PairExplorerBsc() {
               </div>
             </div>
 
-
             {/* top sponsor  */}
             <div className="card card-dark mb-3">
               <div className="card-body">
                 <div className="d-flex justify-content-between">
-                  <h5 >TOP <span className="fw-bolder">SPONSOR</span> </h5>
+                  <h5>
+                    TOP <span className="fw-bolder">SPONSOR</span>{" "}
+                  </h5>
                   <i className="material-icons color-purple ask-small">help</i>
                 </div>
 
@@ -608,7 +622,9 @@ export default function PairExplorerBsc() {
                       <h4 className="mb-0">MFM</h4>
                       <p>MoonFarmer</p>
                     </div>
-                    <i className="material-icons text-green">fiber_manual_record</i>
+                    <i className="material-icons text-green">
+                      fiber_manual_record
+                    </i>
                   </div>
                 </div>
                 <div className="soc-icon mt-3 ">
@@ -621,7 +637,7 @@ export default function PairExplorerBsc() {
                   <div className="icon-wrapper-soc ms-2 pointer">
                     <img src="/assets/icons/logo-twitter.png" alt="logo" />
                   </div>
-                </div> 
+                </div>
                 <div className="mt-2">
                   Join ICO of the marketing platform made to promote blockchain
                 </div>
@@ -632,7 +648,9 @@ export default function PairExplorerBsc() {
             <div className="card card-purple mb-3">
               <div className="card-body text-center">
                 <h4 className="fw-bolder mb-0">FARALAND</h4>
-                <p>backed by <span className="fw-bolder">ADAT Force</span></p>
+                <p>
+                  backed by <span className="fw-bolder">ADAT Force</span>
+                </p>
               </div>
             </div>
 
@@ -640,7 +658,9 @@ export default function PairExplorerBsc() {
             <div className="card card-dark">
               <div className="card-body">
                 <div className="d-flex justify-content-between">
-                  <h5>TOKEN <span className="fw-bolder">NEWS</span></h5>
+                  <h5>
+                    TOKEN <span className="fw-bolder">NEWS</span>
+                  </h5>
                   <i className="material-icons color-purple ask-small">help</i>
                 </div>
 
@@ -650,8 +670,9 @@ export default function PairExplorerBsc() {
 
                 <hr className="after-no-news" />
 
-                <div >
-                  If you want your news to appear in this section, please contact us
+                <div>
+                  If you want your news to appear in this section, please
+                  contact us
                 </div>
                 <div className="soc-icon mt-3 ">
                   <div className="icon-wrapper-soc me-2 pointer">
@@ -663,11 +684,9 @@ export default function PairExplorerBsc() {
                   <div className="icon-wrapper-soc ms-2 pointer">
                     <img src="/assets/icons/logo-twitter.png" alt="logo" />
                   </div>
-                </div> 
-
+                </div>
               </div>
             </div>
-
           </div>
 
           <div className="ps-3" style={{ flex: 1, maxHeight: 1087 }}>
@@ -675,23 +694,23 @@ export default function PairExplorerBsc() {
               <div className="trade-bottom-tab">Trade History</div>
               <div className="positions-tab">My Positions</div>
               <div className="rest-tab">
-                <p>ADAT <span style={{ fontSize: 12 }}>(last 526 trades)</span></p>
+                <p>
+                  ADAT <span style={{ fontSize: 12 }}>(last 526 trades)</span>
+                </p>
                 <div className="sip-ic ms-3">
                   <i className="material-icons">filter_alt</i>
                 </div>
               </div>
             </div>
-            <BootstrapTable 
-              keyField='id' 
-              data={ data } 
-              columns={ columns } 
-              bordered={ false }
+            <BootstrapTable
+              keyField="id"
+              data={data}
+              columns={columns}
+              bordered={false}
             />
           </div>
-
         </div>
       </div>
     </div>
-
   );
 }
