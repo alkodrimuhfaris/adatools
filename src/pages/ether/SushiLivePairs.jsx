@@ -1,8 +1,10 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
-
+import { useSelector } from 'react-redux';
 
 export default function SushiLivePairs() {
+  const { theme } = useSelector((state) => state.theme);
+
   const columns = [
   {
     dataField: 'token',
@@ -499,7 +501,7 @@ export default function SushiLivePairs() {
   
   
   return (
-    <div className="body-body">
+    <div className={`body-body ${theme}`}>
 
       <div className="container">
         <div className="d-flex justify-content-between align-items-center pt-4">

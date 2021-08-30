@@ -1,8 +1,9 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
-
+import { useSelector } from 'react-redux';
 
 export default function PairExplorerPoly() {
+  const { theme } = useSelector((state) => state.theme);
 
   const columns = [
     {
@@ -322,7 +323,7 @@ export default function PairExplorerPoly() {
   
   
   return (
-    <div className="body-body pb-5">
+    <div className={`body-body pb-5 ${theme}`}>
 
       <div className="container">
         <div className="d-flex justify-content-between align-items-center pt-4">

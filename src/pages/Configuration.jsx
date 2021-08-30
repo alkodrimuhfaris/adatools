@@ -1,8 +1,10 @@
 import React from 'react'
 import Switch from "react-switch"
 import { Dropdown } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
 export default function Configuration() {
+  const { theme } = useSelector((state) => state.theme);
 
   const [pairMove, setPairMove] = React.useState(false)
   const [notif, setNotif] = React.useState(false)
@@ -15,7 +17,7 @@ export default function Configuration() {
   }
 
   return (
-    <div className="body-body pb-5">
+    <div className={`body-body pb-5 ${theme}`}>
 
       <div className="container">
         <div className="top-search-title pt-4">

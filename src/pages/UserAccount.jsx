@@ -1,8 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 export default function UserAccount() {
+  const { theme } = useSelector((state) => state.theme);
+
   return (
-    <div className="body-body pb-5">
+    <div className={`body-body pb-5 ${theme}`}>
 
       <div className="container">
         <div className="top-search-title pt-4">
