@@ -515,12 +515,14 @@ export default function LivePairsBsc(props) {
         </div>
         <p className="text-grey pb-5">Search for live new pairs and pool updates</p>
 
-        <BootstrapTable 
-          keyField='id' 
-          data={ data } 
-          columns={ columns } 
-          bordered={ false }
-        />
+        <div className="">
+          <BootstrapTable
+            keyField='id' 
+            data={ data } 
+            columns={ columns } 
+            bordered={ false }
+          />
+        </div>
 
         <div style={{ height: 100, width: "100%" }} />
 

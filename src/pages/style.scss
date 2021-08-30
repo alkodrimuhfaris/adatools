@@ -1,5 +1,16 @@
 .bg-160b2c {
   background-color: #160b2c;
+  .light & {
+    background-color: #e5ddf3 !important;
+  }
+}
+
+.footer-wrapper {
+  & .footer-text {
+    .light & {
+      color: #7950c5 !important;
+    }
+  }
 }
 
 .right-body {
@@ -12,6 +23,33 @@
   text-decoration: none !important;
   color: white !important;
   &.text-card-dark {
+    color: #110822 !important;
+  }
+}
+
+.text-white {
+  .light & {
+    color: #222 !important;
+  }
+}
+
+.text-blue {
+  .light & {
+    color: #110822 !important;
+  }
+}
+
+.text-grey {
+  .light & {
+    color: #030207 !important;
+  }
+}
+
+.input-dark {
+  .light & {
+    background-color: #e5ddf3 !important;
+  }
+  .material-icons {
     color: #110822 !important;
   }
 }
@@ -49,7 +87,7 @@
 
   .brand-head {
     &.light {
-      background-color: #e0e0e0 !important;
+      background-color: #f7f5fb !important;
       color: #46297c !important;
     }
     background-color: #46297c;
@@ -79,7 +117,7 @@
 
   .left-tabs {
     &.light {
-      background-color: #e0e0e0 !important;
+      background-color: #f7f5fb !important;
       color: #46297c !important;
     }
     background-color: #46297c;
@@ -133,6 +171,9 @@
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    .light & {
+      background-color: #f7f5fb !important;
+    }
   }
 
   .t-selected {
@@ -145,6 +186,12 @@
     img {
       height: 60%;
       margin-right: 1.75rem;
+    }
+    .light & {
+      background-color: #4F2F7C !important;
+      & p.text-menu.light {
+        color: white !important;
+      }
     }
   }
 
@@ -160,6 +207,9 @@
       margin-bottom: 1rem;
       .refresh-div-search {
         width: 15%;
+        .light & {
+          background-color: #4F2F7C !important;
+        }
       }
       .input-wrapper {
         width: 80%;
@@ -221,6 +271,9 @@
     border-radius: 10px;
     padding-left: 5px;
     padding-right: 5px;
+    .light & {
+      background-color: #f7f5fb !important;
+    }
   }
 
   .top-search-title {
@@ -238,7 +291,7 @@
 
   .brand-head {
     &.light {
-      background-color: #e0e0e0 !important;
+      background-color: #8b68cd !important;
       color: #46297c !important;
     }
     background-color: #46297c;
@@ -264,11 +317,17 @@
       height: 60%;
       margin-right: 1.75rem;
     }
+    .light & {
+      background-color: #4F2F7C !important;
+      & p.text-menu.light {
+        color: white !important;
+      }
+    }
   }
 
   .left-tabs {
     &.light {
-      background-color: #fff !important;
+      background-color: #f7f5fb !important;
       color: #46297c !important;
     }
     background-color: #46297c;
@@ -432,6 +491,12 @@
   img {
     height: 60%;
   }
+  .light & {
+    background-color: #4F2F7C !important;
+    & p.text-menu.light {
+      color: white !important;
+    }
+  }
 }
 
 .empty-space {
@@ -444,6 +509,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .light & {
+    background-color: #e5ddf3;
+  }
 }
 
 .right-body {
@@ -458,6 +526,22 @@
 .card-dark {
   background-color: #1f1138;
   color: white;
+  .light & {
+    background-color: #e5ddf3 !important;
+    color: #1f1138 !important;
+  }
+  & .color-aqua {
+    .light & {
+      color: #7950c5 !important;
+    }
+  }
+  & .selected {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    .light & {
+      background-color: #dbd1ef !important;
+    }
+  }
 }
 
 .card-head {
@@ -526,6 +610,9 @@
   justify-content: center;
   img {
     height: 55%;
+  }
+  .light & {
+    border: 2px solid #9575d1;
   }
 }
 
@@ -702,16 +789,30 @@
     border-bottom-left-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
+    .light & {
+      background-color: #4F2F7C !important;
+    }
   }
 }
 
 .table {
+  .light & {
+    background-color: #e5ddf3 !important;
+    color: #222;
+    border: 1px solid #e5ddf3 !important;
+    .icon-wrapper-table {
+      background-color: #fff !important;
+    }
+  }
   margin-bottom: 0;
   background-color: #1f1138;
   color: white;
   .border-bottom {
     border-bottom: 2px solid aqua !important;
     border-style: solid;
+    .light & {
+      border-bottom: 2px solid #ababab !important;
+    }
   }
   tr {
     border: transparent;
@@ -756,6 +857,10 @@
   i {
     font-size: 20px;
   }
+  .light & {
+    background-color: #444b98  !important;
+    color: white;
+  }
 }
 
 .trade-tab {
@@ -767,6 +872,9 @@
   padding-top: 7px;
   padding-left: 10px;
   padding-right: 10px;
+  .light & {
+    background-color: #4F2F7C  !important;
+  }
 }
 
 .card-adat {
@@ -805,6 +913,9 @@
         font-size: 15px;
         margin-left: 5px;
         margin-right: 5px;
+      }
+      .light & {
+        color: #39499C !important;
       }
     }
   }
@@ -874,6 +985,9 @@
     font-size: 18px;
 
   }
+  .light & {
+    background-color: #4F2F7C !important;
+  }
 }
 
 .card-purple {
@@ -898,6 +1012,9 @@
   padding-left: 15px;
   padding-right: 15px;
   font-size: 20px;
+  .light & {
+    background-color: #39499C !important;
+  }
 }
 
 .positions-tab {
@@ -909,6 +1026,10 @@
   padding-left: 15px;
   padding-right: 15px;
   font-size: 20px;
+  .light & {
+    background-color: #f3eff9 !important;
+    // color: #030207 !important;
+  }
 }
 
 .rest-tab {
@@ -923,6 +1044,10 @@
   padding-right: 15px;
   font-size: 15px;
   border-bottom: 1px solid #110822;
+  .light & {
+    background-color: #e5ddf3 !important;
+    color: #030207 !important;
+  }
 }
 
 .border-dark-purple {

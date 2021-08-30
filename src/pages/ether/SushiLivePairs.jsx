@@ -517,7 +517,7 @@ export default function SushiLivePairs() {
         </div>
         <p className="text-grey pb-5">Search for live new pairs and pool updates</p>
 
-        <BootstrapTable 
+        <BootstrapTable
           keyField='id' 
           data={ data } 
           columns={ columns } 
