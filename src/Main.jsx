@@ -19,25 +19,6 @@ export default function Main() {
     { value: 6.7, label: "Marketing", color: "#9D8FE9" },
     { value: 13.4, label: "Development", color: "#FF5168" },
   ];
-  const config = {
-    angle: 53,
-    height: 50,
-    ir: 0.45,
-    size: 0.5,
-    strokeWidth: 0.5,
-  };
-
-  //   useEffect(() => {
-  //     let x = am4core.create("chartdiv", am4charts.XYChart);
-
-  //     // ...
-
-  //     chart.current = x;
-
-  //     return () => {
-  //       x.dispose();
-  //     };
-  //   }, [])
 
   const goToDashboard = () => {
     window.location.href = "/app/bsc/main";

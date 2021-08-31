@@ -501,20 +501,32 @@ export default function PairExplorerPoly() {
 
           <div className="col-7">
             <div
-              className="card"
-              style={{
-                border: "1px solid #1b0f23",
-                borderRadius: 25,
-                backgroundColor: "#1b0f23",
-                marginTop: 30,
-              }}
+              className="card mt-4 rounded"
+              // style={{
+              //   // border: "1px solid #1b0f23",
+              //   borderRadius: 25,
+              //   // backgroundColor: "#1b0f23",
+              //   marginTop: 30,
+              // }}
             >
-              <div className="card-body">
-                <TypeChooser>
-                  {(type) => {
-                    <ChartGraph type={type} data={datas} />;
+              <div
+                style={{ height: "463px" }}
+                className="card-body position-relative"
+              >
+                <div
+                  style={{
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%,-50%)",
                   }}
-                </TypeChooser>
+                  className="position-absolute w-100 h-100 p-4"
+                >
+                  <img
+                    src="/assets/charts_img.png"
+                    alt="charts"
+                    style={{ border: "none", width: "100%" }}
+                  />
+                </div>
               </div>
             </div>
           </div>

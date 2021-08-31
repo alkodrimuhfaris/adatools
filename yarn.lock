@@ -5777,6 +5777,11 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+fancy-canvas@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/fancy-canvas/-/fancy-canvas-0.2.2.tgz#33fd4976724169a1eda5015f515a2a1302d1ec91"
+  integrity sha512-50qi8xA0QkHbjmb8h7XQ6k2fvD7y/yMfiUw9YTarJ7rWrq6o5/3CCXPouYk+XSLASvvxtjyiQLRBFt3qkE3oyA==
+
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -7787,6 +7792,14 @@ jsonfile@^6.0.1:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
+kaktana-react-lightweight-charts@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/kaktana-react-lightweight-charts/-/kaktana-react-lightweight-charts-2.0.0.tgz#a724552622dd5d55b9711d0a12abfc38f2172837"
+  integrity sha512-j2hJLtz18XplhkJHW6K3tqd9f2LStamypttZbfyAgHEFYI6uRCoKzWuKNiTYTM8Eqsr18eynGcYrACIU1C10nw==
+  dependencies:
+    fast-deep-equal "^3.1.1"
+    lightweight-charts "^3.3.0"
+
 killable@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.1.tgz#4c8ce441187a061c7474fb87ca08e2a638194892"
@@ -7871,6 +7884,13 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+lightweight-charts@^3.3.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/lightweight-charts/-/lightweight-charts-3.5.0.tgz#b675ef3733c13bb2ae61d263843680e31e3459b2"
+  integrity sha512-IK+Wqk0QNq2lPj0VKtgpg+mCCbA6T2+V788QA7M1PckcwHmAeLpjGz+/vpeEl4cBzmWSAEzCbN64aRbNP5yLwQ==
+  dependencies:
+    fancy-canvas "0.2.2"
 
 linebreak@^1.0.2:
   version "1.0.2"
