@@ -1,13 +1,12 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import { useSelector } from "react-redux";
-import getData from "../../dto/getData";
+import dataJSON from "../../dto/data.json";
 import ChartGraph from "../../component/ChartGraph";
-import TypeChooser from "react-stockcharts/lib/helper/TypeChooser";
+import ChartWrapper from "../../component/ChartWrapper";
 
 export default function PairExplorerPoly() {
   const { theme } = useSelector((state) => state.theme);
-  const datas = getData();
 
   const columns = [
     {
@@ -499,19 +498,16 @@ export default function PairExplorerPoly() {
             </div>
           </div>
 
-          <div className="col-7">
+          <div className="col-7 pt-4">
             <div
-              className="card mt-4 rounded"
-              // style={{
-              //   // border: "1px solid #1b0f23",
-              //   borderRadius: 25,
-              //   // backgroundColor: "#1b0f23",
-              //   marginTop: 30,
-              // }}
+              className="card candlestick h-100"
+              style={{
+                borderRadius: 10,
+              }}
             >
               <div
-                style={{ height: "463px" }}
-                className="card-body position-relative"
+                style={{ minHeight: "463px" }}
+                className="card-body position-relative h-100"
               >
                 <div
                   style={{
@@ -521,11 +517,7 @@ export default function PairExplorerPoly() {
                   }}
                   className="position-absolute w-100 h-100 p-4"
                 >
-                  <img
-                    src="/assets/charts_img.png"
-                    alt="charts"
-                    style={{ border: "none", width: "100%" }}
-                  />
+                  <ChartWrapper title="Stock Market" />
                 </div>
               </div>
             </div>

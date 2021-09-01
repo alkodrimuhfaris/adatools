@@ -54,6 +54,15 @@
   }
 }
 
+.candlestick.card {
+  .light & {
+    background-color: #e5ddf3 !important;
+  }
+  .dark & {
+    background-color: #1f1138;
+  }
+}
+
 @media (max-width: 767px) {
 
   .button-expand-mobile {
