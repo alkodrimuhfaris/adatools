@@ -123,7 +123,11 @@ export default function LeftTab(props) {
       icon: "/assets/icons/polygon.png",
       name: "Polygon",
       to: {
-        pathname: "/app/bsc/polygon",
+        pathname: `/app/bsc/${
+          child !== "ether" || child !== "polygon" || child !== "bsc"
+            ? child
+            : "main"
+        }`,
       },
     },
   ];
@@ -200,7 +204,11 @@ export default function LeftTab(props) {
       icon: "/assets/icons/polygon.png",
       name: "Polygon",
       to: {
-        pathname: `/app/polygon/${child}`,
+        pathname: `/app/polygon/${
+          child !== "ether" || child !== "polygon" || child !== "bsc"
+            ? child
+            : "main"
+        }`,
       },
     },
   ];
@@ -277,7 +285,11 @@ export default function LeftTab(props) {
       icon: "/assets/icons/bsc.png",
       name: "BSC",
       to: {
-        pathname: `/app/bsc/${child}`,
+        pathname: `/app/bsc/${
+          child !== "ether" || child !== "polygon" || child !== "bsc"
+            ? child
+            : "main"
+        }`,
       },
     },
   ];
@@ -355,23 +367,23 @@ export default function LeftTab(props) {
                   </div>
                 </div>
               );
-              
+
             if (i.icon && !i.to)
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  i.name === "New Pairs Bot" &&
-                    window.open("https://web.telegram.org/");
-                  i.name === "Theme Mode" && changeTheme();
-                }}
-              >
-                <div className="tab-menu ">
-                  {i.icon !== "" && <img src={i.icon} alt="icons" />}
-                  <p className={`text-menu ${props.theme}`}>{i.name} </p>
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    i.name === "New Pairs Bot" &&
+                      window.open("https://web.telegram.org/");
+                    i.name === "Theme Mode" && changeTheme();
+                  }}
+                >
+                  <div className="tab-menu ">
+                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    <p className={`text-menu ${props.theme}`}>{i.name} </p>
+                  </div>
                 </div>
-              </div>
-            );
+              );
             if (i.icon && !i.to)
               return (
                 <div
@@ -411,21 +423,21 @@ export default function LeftTab(props) {
                 </div>
               );
             if (i.icon && !i.to)
-            return (
-              <div
-                key={index}
-                onClick={() => {
-                  i.name === "New Pairs Bot" &&
-                    window.open("https://web.telegram.org/");
-                  i.name === "Theme Mode" && changeTheme();
-                }}
-              >
-                <div className="tab-menu ">
-                  {i.icon !== "" && <img src={i.icon} alt="icons" />}
-                  <p className={`text-menu ${props.theme}`}>{i.name} </p>
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    i.name === "New Pairs Bot" &&
+                      window.open("https://web.telegram.org/");
+                    i.name === "Theme Mode" && changeTheme();
+                  }}
+                >
+                  <div className="tab-menu ">
+                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    <p className={`text-menu ${props.theme}`}>{i.name} </p>
+                  </div>
                 </div>
-              </div>
-            );
+              );
             if (i.icon && !i.to)
               return (
                 <div

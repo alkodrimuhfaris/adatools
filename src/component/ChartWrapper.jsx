@@ -7,7 +7,7 @@ import ChartGraph from "./ChartGraph";
 export default function ChartWrapper({
   title = "Stock Market",
   data = dataJSON,
-  currency = "$"
+  currency = "$",
 }) {
   const [ref1, wRef1, hRef1] = useComponentWidth();
   const { theme } = useSelector((state) => state.theme);
