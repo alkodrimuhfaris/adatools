@@ -63,6 +63,12 @@
   }
 }
 
+.ver-1 {
+  &.font-bold {
+    font-size: 2em;
+  }
+}
+
 @media (max-width: 767px) {
 
   .button-expand-mobile {

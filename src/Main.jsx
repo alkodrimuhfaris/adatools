@@ -9,6 +9,7 @@ import {
   Col,
   Card,
 } from "react-bootstrap";
+// import { ReactComponent as ArrowExpand } from "./assets/icons/arrow.svg";
 import Chart from "./component/Chart";
 
 export default function Main() {
@@ -109,10 +110,11 @@ export default function Main() {
         </div>
 
         <div className="expand-more">
-          <i className="material-icons text-white">expand_more</i>
+          {/* <ArrowExpand className="text-white" /> */}
+          <img src="./assets/icons/arrow.svg" alt="expand button" />
         </div>
 
-        <div className="text-white text-center container p-5">
+        <div className="text-white text-center container p-5 ver-1 font-bold">
           If you are an ADA user, and you want to be able to anticipate market
           movements and develop better trading strategies, ADA Tools will help
           you in a very simple way
@@ -567,22 +569,45 @@ export default function Main() {
               *Marketing, developments and ADATshare tokens are locked
             </div>
           </div>
-          <div className="adat-right" style={{ height: "90%", minHeight: '250px' }}>
+          <div
+            className="adat-right"
+            style={{ height: "90%", minHeight: "250px" }}
+          >
             <Card className="shadow h-100 position-relative">
-              <div style={{height: '80%'}} >
+              <div style={{ height: "80%" }}>
                 <Chart data={data} />
               </div>
-              <div style={{height: '20%'}} className="position-relative">
+              <div style={{ height: "20%" }} className="position-relative">
                 <div
                   style={{ bottom: 0, right: 0 }}
                   className="position-absolute w-100"
                 >
-                  <ul className="pr-2 d-flex flex-wrap" style={{listStyle: 'none', marginBottom: '0.1em', padding: '0 0.5em'}}>
+                  <ul
+                    className="pr-2 d-flex flex-wrap"
+                    style={{
+                      listStyle: "none",
+                      marginBottom: "0.1em",
+                      padding: "0 0.5em",
+                    }}
+                  >
                     {data.map((val, idx) => {
                       return (
-                        <li key={idx} style={{color: '#46297c', width: '50%'}} className="d-flex align-items-center">
-                          <div style={{width: '10px', marginRight: '0.5em', height: '10px', backgroundColor: val.color}} />
-                          <span className="small" /*style={{fontWeight: 'bold'}}*/>{`${val.label}: ${val.value}%`}</span>
+                        <li
+                          key={idx}
+                          style={{ color: "#46297c", width: "50%" }}
+                          className="d-flex align-items-center"
+                        >
+                          <div
+                            style={{
+                              width: "10px",
+                              marginRight: "0.5em",
+                              height: "10px",
+                              backgroundColor: val.color,
+                            }}
+                          />
+                          <span
+                            className="small" /*style={{fontWeight: 'bold'}}*/
+                          >{`${val.label}: ${val.value}%`}</span>
                         </li>
                       );
                     })}
