@@ -355,6 +355,23 @@ export default function LeftTab(props) {
                   </div>
                 </div>
               );
+              
+            if (i.icon && !i.to)
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  i.name === "New Pairs Bot" &&
+                    window.open("https://web.telegram.org/");
+                  i.name === "Theme Mode" && changeTheme();
+                }}
+              >
+                <div className="tab-menu ">
+                  {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                  <p className={`text-menu ${props.theme}`}>{i.name} </p>
+                </div>
+              </div>
+            );
             if (i.icon && !i.to)
               return (
                 <div
@@ -393,6 +410,22 @@ export default function LeftTab(props) {
                   </div>
                 </div>
               );
+            if (i.icon && !i.to)
+            return (
+              <div
+                key={index}
+                onClick={() => {
+                  i.name === "New Pairs Bot" &&
+                    window.open("https://web.telegram.org/");
+                  i.name === "Theme Mode" && changeTheme();
+                }}
+              >
+                <div className="tab-menu ">
+                  {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                  <p className={`text-menu ${props.theme}`}>{i.name} </p>
+                </div>
+              </div>
+            );
             if (i.icon && !i.to)
               return (
                 <div
