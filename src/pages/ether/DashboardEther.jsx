@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SvgIcon from "../../component/SvgIcon";
 
 export default function DashboardEther(props) {
   console.log("props", props);
@@ -35,23 +36,23 @@ export default function DashboardEther(props) {
               </div>
               <Link
                 to="uni-live-pair"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/11.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/11.svg"/>
                 <span className="ps-2 ">Live New Pairs</span>
               </Link>
               <Link
                 to="uni-pair-explorer"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/12.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/12.svg"/>
                 <span className="ps-2">Pair Explorer</span>
               </Link>
               <Link
                 to="uni-big-swap"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/12.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/12.svg"/>
                 <span className="ps-2">Big Swap Tools</span>
               </Link>
             </div>
@@ -81,23 +82,23 @@ export default function DashboardEther(props) {
               </div>
               <Link
                 to="sushi-live-pair"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/11.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/11.svg"/>
                 <span className="ps-2 ">Live New Pairs</span>
               </Link>
               <Link
                 to="sushi-pair-explorer"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/12.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/12.svg"/>
                 <span className="ps-2">Pair Explorer</span>
               </Link>
               <Link
                 to="sushi-big-swap"
-                className={`pair ${textCol} mb-2 d-block`}
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
               >
-                <img src="/assets/icons/12.svg" alt="icons" />
+                <SvgIcon src="/assets/icons/12.svg"/>
                 <span className="ps-2">Big Swap Tools</span>
               </Link>
             </div>
@@ -115,16 +116,16 @@ export default function DashboardEther(props) {
             </div>
             <hr />
             <div className="body-card">
-              <Link to="multiswap" className={`pair ${textCol} mb-2 d-block`}>
-                <img src="/assets/icons/13.svg" alt="icons" />
+              <Link to="multiswap" className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}>
+                <SvgIcon src="/assets/icons/13.svg"/>
                 <span className="ps-2 ">MultiSwap</span>
               </Link>
-              <div className="pair mb-2 pointer">
-                <img src="/assets/icons/01.svg" alt="icons" />
+              <div className="pair mb-2 pointer d-flex align-items-center">
+                <SvgIcon src="/assets/icons/01.svg" />
                 <span className="ps-2">Wallet Information</span>
               </div>
-              <div className="pair pointer">
-                <img src="/assets/icons/14.svg" alt="icons" />
+              <div className="pair pointer d-flex align-items-center">
+                <SvgIcon src="/assets/icons/14.svg"/>
                 <span className="ps-2">New Pairs Bot</span>
               </div>
             </div>

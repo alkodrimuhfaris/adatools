@@ -11,6 +11,8 @@ import {
 } from "react-bootstrap";
 // import { ReactComponent as ArrowExpand } from "./assets/icons/arrow.svg";
 import Chart from "./component/Chart";
+import SvgIcon from "./component/SvgIcon";
+import SvgIconArrow from "./component/SvgIconArrow";
 
 export default function Main() {
   const data = [
@@ -111,7 +113,7 @@ export default function Main() {
 
         <div className="expand-more">
           {/* <ArrowExpand className="text-white" /> */}
-          <img src="./assets/icons/arrow.svg" alt="expand button" />
+          <SvgIcon src = "../assets/icons/arrow.svg" />
         </div>
 
         <div className="text-white text-center container p-5 ver-1 font-bold">

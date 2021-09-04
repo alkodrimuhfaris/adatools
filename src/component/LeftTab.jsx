@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useParams, useRouteMatch } from "react-router-dom";
 import actions from "../redux/actions";
+import SvgIcon from "./SvgIcon";
 
 export default function LeftTab(props) {
   // const sidebarCollapsed = localStorage.getItem('sidebar-collapsed')
@@ -28,7 +29,7 @@ export default function LeftTab(props) {
 
   const etherSidebar = [
     {
-      icon: "/assets/icons/10.svg",
+      icon: "../../assets/icons/10.svg",
       name: "ADATBOARD",
       to: "main",
     },
@@ -38,17 +39,17 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/11.svg",
+      icon: "../../assets/icons/11.svg",
       name: "Live New Pairs",
       to: "uni-live-pair",
     },
     {
-      icon: "/assets/icons/12.svg",
+      icon: "../../assets/icons/12.svg",
       name: "Pair Explorer",
       to: "uni-pair-explorer",
     },
     {
-      icon: "/assets/icons/03.svg",
+      icon: "../../assets/icons/03.svg",
       name: "Big Swap Explorer",
       to: "uni-big-swap",
     },
@@ -58,17 +59,17 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/11.svg",
+      icon: "../../assets/icons/11.svg",
       name: "Live New Pairs",
       to: "sushi-live-pair",
     },
     {
-      icon: "/assets/icons/12.svg",
+      icon: "../../assets/icons/12.svg",
       name: "Pair Explorer",
       to: "sushi-pair-explorer",
     },
     {
-      icon: "/assets/icons/03.svg",
+      icon: "../../assets/icons/03.svg",
       name: "Big Swap Explorer",
       to: "sushi-big-swap",
     },
@@ -78,12 +79,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/13.svg",
+      icon: "../../assets/icons/13.svg",
       name: "Multiswap",
       to: "multiswap",
     },
     {
-      icon: "/assets/icons/14.svg",
+      icon: "../../assets/icons/14.svg",
       name: "New Pairs Bot",
       to: "",
     },
@@ -93,12 +94,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/15.svg",
+      icon: "../../assets/icons/15.svg",
       name: "User Account",
       to: "user",
     },
     {
-      icon: "/assets/icons/16.svg",
+      icon: "../../assets/icons/16.svg",
       name: "Configuration",
       to: "configuration",
     },
@@ -108,7 +109,7 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/17.svg",
+      icon: "../../assets/icons/17.svg",
       name: "Theme Mode",
       to: "",
     },
@@ -134,7 +135,7 @@ export default function LeftTab(props) {
 
   const bscSidebar = [
     {
-      icon: "/assets/icons/10.svg",
+      icon: "../../assets/icons/10.svg",
       name: "ADATBOARD",
       to: "main",
     },
@@ -144,12 +145,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/11.svg",
+      icon: "../../assets/icons/11.svg",
       name: "Live New Pairs",
       to: "live-pair",
     },
     {
-      icon: "/assets/icons/12.svg",
+      icon: "../../assets/icons/12.svg",
       name: "Pair Explorer",
       to: "pair-explorer",
     },
@@ -159,12 +160,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/13.svg",
+      icon: "../../assets/icons/13.svg",
       name: "Multiswap",
       to: "multiswap",
     },
     {
-      icon: "/assets/icons/14.svg",
+      icon: "../../assets/icons/14.svg",
       name: "New Pairs Bot",
       to: "",
     },
@@ -174,12 +175,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/15.svg",
+      icon: "../../assets/icons/15.svg",
       name: "User Account",
       to: "user",
     },
     {
-      icon: "/assets/icons/16.svg",
+      icon: "../../assets/icons/16.svg",
       name: "Configuration",
       to: "configuration",
     },
@@ -189,7 +190,7 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/17.svg",
+      icon: "../../assets/icons/17.svg",
       name: "Theme Mode",
       to: "",
     },
@@ -215,7 +216,7 @@ export default function LeftTab(props) {
 
   const polySidebar = [
     {
-      icon: "/assets/icons/10.svg",
+      icon: "../../assets/icons/10.svg",
       name: "ADATBOARD",
       to: "main",
     },
@@ -225,12 +226,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/11.svg",
+      icon: "../../assets/icons/11.svg",
       name: "Live New Pairs",
       to: "live-pair",
     },
     {
-      icon: "/assets/icons/12.svg",
+      icon: "../../assets/icons/12.svg",
       name: "Pair Explorer",
       to: "pair-explorer",
     },
@@ -240,12 +241,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/13.svg",
+      icon: "../../assets/icons/13.svg",
       name: "Multiswap",
       to: "multiswap",
     },
     {
-      icon: "/assets/icons/14.svg",
+      icon: "../../assets/icons/14.svg",
       name: "New Pairs Bot",
       to: "",
     },
@@ -255,12 +256,12 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/15.svg",
+      icon: "../../assets/icons/15.svg",
       name: "User Account",
       to: "user",
     },
     {
-      icon: "/assets/icons/16.svg",
+      icon: "../../assets/icons/16.svg",
       name: "Configuration",
       to: "configuration",
     },
@@ -270,7 +271,7 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/17.svg",
+      icon: "../../assets/icons/17.svg",
       name: "Theme Mode",
       to: "",
     },
@@ -300,6 +301,7 @@ export default function LeftTab(props) {
   };
 
   return (
+    // <div className="left-tab-wrapper">
     <div
       className={
         props.isMobile
@@ -317,14 +319,18 @@ export default function LeftTab(props) {
         <img src="/assets/logo.png" alt="logo" className="logo-with-text" />
       </div>
 
-      <div>
+      <div className={
+        props.isMobile
+          ? ""
+          : `ver-1 left-tabs-menu`
+      }>
         {parent === "bsc" &&
           bscSidebar.map((i, index) => {
             if (!i.icon && !i.to)
               return (
                 <div key={index}>
                   <div className="tab-menu-not-hover ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -340,7 +346,7 @@ export default function LeftTab(props) {
                   }}
                 >
                   <div className="tab-menu ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -349,7 +355,7 @@ export default function LeftTab(props) {
               return (
                 <Link key={index} to={i.to} replace className="link-wrap">
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </Link>
@@ -362,7 +368,7 @@ export default function LeftTab(props) {
               return (
                 <div key={index}>
                   <div className="tab-menu-not-hover ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -379,7 +385,7 @@ export default function LeftTab(props) {
                   }}
                 >
                   <div className="tab-menu ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -395,7 +401,7 @@ export default function LeftTab(props) {
                   }
                 >
                   <div className="tab-menu ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -404,7 +410,7 @@ export default function LeftTab(props) {
               return (
                 <Link key={index} to={i.to} replace className="link-wrap">
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </Link>
@@ -417,7 +423,7 @@ export default function LeftTab(props) {
               return (
                 <div key={index}>
                   <div className="tab-menu-not-hover ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -433,7 +439,7 @@ export default function LeftTab(props) {
                   }}
                 >
                   <div className="tab-menu ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -449,7 +455,7 @@ export default function LeftTab(props) {
                   }
                 >
                   <div className="tab-menu ">
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </div>
@@ -458,13 +464,14 @@ export default function LeftTab(props) {
               return (
                 <Link key={index} to={i.to} replace className="link-wrap">
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
-                    {i.icon !== "" && <img src={i.icon} alt="icons" />}
+                    {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
                   </div>
                 </Link>
               );
           })}
       </div>
+
     </div>
   );
 }

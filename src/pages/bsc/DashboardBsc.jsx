@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SvgIcon from '../../component/SvgIcon'
 
 export default function Dashboard(props) {
   console.log("props", props)
@@ -29,12 +30,12 @@ export default function Dashboard(props) {
               <input type="text" className="form-control input-dark " placeholder="Search pair" />
               <i className="material-icons" style={{ top: '20%' }}>search</i>
             </div>
-            <Link to="live-pair" className={`pair ${textCol} mb-2 d-block`}>
-              <img src="/assets/icons/11.svg" alt="icons" />
+            <Link to="live-pair" className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}>
+              <SvgIcon src="/assets/icons/11.svg" />
               <span className="ps-2 ">Live New Pairs</span>
             </Link>
-            <Link to="pair-explorer" className={`pair ${textCol} mb-2 d-block`}>
-              <img src="/assets/icons/12.svg" alt="icons" />
+            <Link to="pair-explorer" className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}>
+              <SvgIcon src="/assets/icons/12.svg" />
               <span className="ps-2">Pair Explorer</span>
             </Link>
             
@@ -53,16 +54,16 @@ export default function Dashboard(props) {
           </div>
           <hr />
           <div className="body-card">
-            <Link to="multiswap" className={`pair ${textCol} mb-2 d-block`}>
-              <img src="/assets/icons/13.svg" alt="icons" />
+            <Link to="multiswap" className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}>
+              <SvgIcon src="/assets/icons/13.svg" />
               <span className="ps-2 ">MultiSwap</span>
             </Link>
-            <div className={`pair ${textCol} mb-2 d-block`}>
-              <img src="/assets/icons/01.svg" alt="icons" />
+            <div className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}>
+              <SvgIcon src="/assets/icons/12.svg" />
               <span className="ps-2">Wallet Information</span>
             </div>
-            <div className={`pair ${textCol} d-block`}>
-              <img src="/assets/icons/14.svg" alt="icons" />
+            <div className={`pair ${textCol} d-block d-flex align-items-center`}>
+              <SvgIcon src="/assets/icons/14.svg" />
               <span className="ps-2">New Pairs Bot</span>
             </div>
           </div>
