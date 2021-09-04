@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Footer() {
   return (
@@ -7,7 +7,10 @@ export default function Footer() {
         <div className="footer-wrapper">
           <p className="footer-text">
             <span className="material-icons">copyright</span>
-            <span className="vertical-super ms-1">ADA Tools 2021 - info@adatools.com | Ads & Marketing: marketing@adatools.com</span>    
+            <p className="vertical-super ms-1">
+              ADA Tools 2021 - <a href="mailto:info@adatools.com">info@adatools.com</a> | Ads &
+              Marketing: <a href="mailto:marketing@adatools.com">marketing@adatools.com</a>
+            </p>
           </p>
 
           <div className="soc-icon ">
@@ -20,10 +23,9 @@ export default function Footer() {
             <div className="icon-wrapper-soc ms-2 pointer">
               <img src="/assets/icons/logo-twitter.png" alt="logo" />
             </div>
-          </div>  
+          </div>
         </div>
       </div>
     </div>
-
-  )
+  );
 }

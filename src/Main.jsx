@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 // import { ReactComponent as ArrowExpand } from "./assets/icons/arrow.svg";
 import Chart from "./component/Chart";
+import FeaturesMenu from "./component/FeaturesMenu";
 import SvgIcon from "./component/SvgIcon";
 import SvgIconArrow from "./component/SvgIconArrow";
 
@@ -113,13 +114,17 @@ export default function Main() {
 
         <div className="expand-more">
           {/* <ArrowExpand className="text-white" /> */}
-          <SvgIcon src = "../assets/icons/arrow.svg" />
+          <SvgIconArrow />
         </div>
 
-        <div className="text-white text-center container p-5 ver-1 font-bold">
-          If you are an ADA user, and you want to be able to anticipate market
-          movements and develop better trading strategies, ADA Tools will help
-          you in a very simple way
+        <div className="text-white text-center container container ver-1 font-large">
+          <p className="py-5 px-5">
+            If you are an ADA user, and you want to be able to anticipate market
+            <br />
+            movements and develop better trading strategies, ADA Tools will help
+            <br />
+            you in a very simple way
+          </p>
         </div>
 
         <div className="how-wrap">
@@ -154,71 +159,22 @@ export default function Main() {
       </div>
 
       <Container>
-        <p className="features-title">FEATURES</p>
-        <div className="features-wrap">
-          <div className="f-left pe-2">
-            <div className="pool p-2">
-              <img src="/assets/icons/11.svg" alt="icons" className="p-img" />
-              <span className="ps-2">Pool Explorer</span>
-            </div>
-            <div className="pool-exp ps-2">
-              <img
-                src="/assets/features_image.png"
-                alt="feature"
-                className="f-img"
-              />
-            </div>
-            <p className="text-only ps-4 py-2">
-              Search for new pools, add or remove liquidity in a pair, find the
-              best gems and avoid the scams.
-            </p>
-
-            <hr className="m-0" />
-
-            <div className="pair p-2">
-              <img src="/assets/icons/12.svg" alt="icons" />
-              <span className="ps-2">Pair Explorer</span>
-            </div>
-
-            <hr className="m-0" />
-
-            <div className="pair p-2">
-              <img src="/assets/icons/03.svg" alt="icons" />
-              <span className="ps-2">Big Swap Explorer</span>
-            </div>
-
-            <hr className="m-0" />
-
-            <div className="pair p-2">
-              <img src="/assets/icons/13.svg" alt="icons" />
-              <span className="ps-2">Multiswap Explorer</span>
-            </div>
-
-            <hr className="m-0" />
-
-            <div className="pair p-2">
-              <img src="/assets/icons/01.svg" alt="icons" />
-              <span className="ps-2">Wallet Info</span>
-            </div>
-          </div>
-          <div className="f-right ps-2">
-            <img
-              src="/assets/features_image.png"
-              alt="feature"
-              className="f-img"
-            />
-          </div>
-        </div>
+        <p className="features-title font-large text-spaced purple-text ver-1">
+          FEATURES
+        </p>
+        <FeaturesMenu />
+        {/* <div className="mb-5 w-100">
+        </div> */}
       </Container>
 
       <div className="bg-purple user-plan-wrap">
         <div className="bg1">
           <img src="/assets/bg1.png" alt="background" />
         </div>
-        <Container className="user-plan-wrap-2">
+        <Container className="user-plan-wrap-2 pt-3">
           {/* <div className="material-icons arrow-down-white text-center">arrow_drop_down</div> */}
 
-          <p className="sub-size text-center pt-5 mb-0 text-white">
+          <p className="sub-size text-center pt-5 mb-0 ver-1 font-large text-spaced text-white">
             USER PLANS
           </p>
           <p className="text-center text-white mb-4 mt-2">
@@ -460,8 +416,10 @@ export default function Main() {
         <div className="bg2">
           <img src="/assets/bg2.png" alt="background" />
         </div>
-        <Container className="roadmap-wrap-2">
-          <div className="roadmap-title">ROADMAP</div>
+        <Container className="roadmap-wrap-2 pt-5">
+          <div className="roadmap-title ver-1 text-spaced font-large">
+            ROADMAP
+          </div>
           <Row>
             <Col xs={10} md={3} className="pe-2 mt-5 mx-auto">
               <Card className="card-bg-purple">
@@ -537,8 +495,10 @@ export default function Main() {
         </Container>
       </div>
 
-      <div className="bg-grey">
-        <div className="adat-token-title container">ADAT TOKEN</div>
+      <div className="bg-grey adat-token-wrap">
+        <div className="adat-token-title container pt-5 ver-1 purple-text text-spaced-sm font-large">
+          ADAT TOKEN
+        </div>
 
         <div className="container adat-wrapper">
           <div className="adat-left">
@@ -621,6 +581,13 @@ export default function Main() {
         </div>
       </div>
 
+      <div className="safegram-wrap">
+        <div className="container d-flex flex-column align-items-center justify-content-center">
+          <p className="ver-1 font-pretty-large text-spaced-sm">PARTNER</p>
+          <img src="/assets/safegram_logo.png" className="mt-3" width="300px" alt="safegram" />
+        </div>
+      </div>
+
       <div className="bg-purple pt-5">
         <Container>
           <p className="footer-text">
@@ -643,11 +610,17 @@ export default function Main() {
 
           <div className="footer-wrapper">
             <p className="footer-text">
-              <span className="material-icons">copyright</span>
-              <span className="vertical-super ms-1">
-                ADA Tools 2021 - info@adatools.com | Ads & Marketing:
-                marketing@adatools.com
-              </span>
+              <p className="d-flex ver-1 font-litle-large justify-content-center align-items-center ms-1">
+                <span className="material-icons">copyright</span>
+                <span style={{marginLeft: '0.5em'}} className="font-bold ver-1">
+                  ADA Tools 2021 -{" "}
+                  <a className="ml-4 ver-1 link-white" href="mailto:info@adatools.com">info@adatools.com</a> | Ads &
+                  Marketing:{" "}
+                  <a className="ml-4 ver-1 link-white" href="mailto:marketing@adatools.com">
+                    marketing@adatools.com
+                  </a>
+                </span>
+              </p>
             </p>
 
             <div className="soc-icon ">
