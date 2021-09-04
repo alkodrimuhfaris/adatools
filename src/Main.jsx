@@ -12,8 +12,10 @@ import {
 // import { ReactComponent as ArrowExpand } from "./assets/icons/arrow.svg";
 import Chart from "./component/Chart";
 import FeaturesMenu from "./component/FeaturesMenu";
+import RoadMap from "./component/RoadMap";
 import SvgIcon from "./component/SvgIcon";
 import SvgIconArrow from "./component/SvgIconArrow";
+import SvgIconCustom from "./component/SvgIconCustom";
 import UserPlans from "./component/UserPlans";
 
 export default function Main() {
@@ -200,69 +202,8 @@ export default function Main() {
           <div className="roadmap-title ver-1 text-spaced font-large">
             ROADMAP
           </div>
-          <Row>
-            <Col xs={10} md={3} className="pe-2 mt-5 mx-auto">
-              <Card className="card-bg-purple">
-                <div className="text-center bg-purple text-white top py-2 fw-bolder">
-                  2021 Q1
-                </div>
-                <Card.Body>
-                  <ul>
-                    <li>Technical improvements</li>
-                    <li>Websockets</li>
-                    <li>SushiSwap integration</li>
-                    <li>Multiexchange support</li>
-                    <li>Velox bots and limit orders integration</li>
-                    <li>UX/UI redesign</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col xs={10} md={3} className="px-2 mt-5 mx-auto">
-              <Card className="card-bg-purple">
-                <div className="text-center bg-purple text-white top py-2 fw-bolder">
-                  2021 Q2
-                </div>
-                <Card.Body>
-                  <ul>
-                    <li>NFT marketing promotion tool</li>
-                    <li>Presale promotion tools</li>
-                    <li>Binance smart chain integration (Pencakeswap)</li>
-                    <li>UI/UX redesign</li>
-                    <li>Pencake listing</li>
-                    <li>Improvements based on community feedback</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col xs={10} md={3} className="px-2 mt-5 mx-auto">
-              <Card className="card-bg-purple">
-                <div className="text-center bg-purple text-white top py-2 fw-bolder">
-                  2021 Q3
-                </div>
-                <Card.Body>
-                  <ul>
-                    <li>CEX tools</li>
-                    <li>PAdvanced public API releases</li>
-                    <li>More ADA integration</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col xs={10} md={3} className="pe-2 mt-5 mx-auto">
-              <Card className="card-bg-purple">
-                <div className="text-center bg-purple text-white top py-2 fw-bolder">
-                  2021 Q4
-                </div>
-                <Card.Body>
-                  <ul>
-                    <li>More ADA integration</li>
-                    <li>Improvements based on community feedback</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
+
+          <RoadMap />
 
           <div className="mt-5 f-small text-white text-center pb-5">
             This is a floating roadmap, so timelines are flexible. This is
@@ -280,7 +221,7 @@ export default function Main() {
           ADAT TOKEN
         </div>
 
-        <div className="container adat-wrapper">
+        <div className="container adat-wrapper" style={{ minHeight: "300px" }} >
           <div className="adat-left">
             <div className="wrapper">
               <p className="name">Token Name:</p>
@@ -316,7 +257,7 @@ export default function Main() {
             style={{ height: "90%", minHeight: "250px" }}
           >
             <Card className="shadow h-100 position-relative">
-              <div style={{ height: "80%" }}>
+              <div style={{ height: "80%", minHeight: "200px" }}>
                 <Chart data={data} />
               </div>
               <div style={{ height: "20%" }} className="position-relative">
@@ -364,7 +305,12 @@ export default function Main() {
       <div className="safegram-wrap">
         <div className="container d-flex flex-column align-items-center justify-content-center">
           <p className="ver-1 font-pretty-large text-spaced-sm">PARTNER</p>
-          <img src="/assets/safegram_logo.png" className="mt-3" width="300px" alt="safegram" />
+          <img
+            src="/assets/safegram_logo.png"
+            className="mt-3"
+            width="300px"
+            alt="safegram"
+          />
         </div>
       </div>
 
@@ -392,26 +338,55 @@ export default function Main() {
             <p className="footer-text">
               <p className="d-flex ver-1 font-litle-large justify-content-center align-items-center ms-1">
                 <span className="material-icons">copyright</span>
-                <span style={{marginLeft: '0.5em'}} className="font-bold ver-1">
+                <span
+                  style={{ marginLeft: "0.5em" }}
+                  className="font-bold ver-1"
+                >
                   ADA Tools 2021 -{" "}
-                  <a className="ml-4 ver-1 link-white" href="mailto:info@adatools.com">info@adatools.com</a> | Ads &
-                  Marketing:{" "}
-                  <a className="ml-4 ver-1 link-white" href="mailto:marketing@adatools.com">
+                  <a
+                    className="ml-4 ver-1 link-white"
+                    href="mailto:info@adatools.com"
+                  >
+                    info@adatools.com
+                  </a>{" "}
+                  | Ads & Marketing:{" "}
+                  <a
+                    className="ml-4 ver-1 link-white"
+                    href="mailto:marketing@adatools.com"
+                  >
                     marketing@adatools.com
                   </a>
                 </span>
               </p>
             </p>
 
-            <div className="soc-icon ">
+            <div className="soc-icon">
               <div className="icon-wrapper-soc me-2">
-                <img src="/assets/icons/logo-telegram.png" alt="logo" />
+                <a className="icon-footer-wrapper" href="#">
+                  <SvgIconCustom
+                    className={["icon-footer"]}
+                    src="assets/telegram.svg"
+                  />
+                </a>
+                {/* <img src="/assets/icons/logo-telegram.png" alt="logo" /> */}
               </div>
               <div className="icon-wrapper-soc mx-2">
-                <img src="/assets/icons/logo-medium.png" alt="logo" />
+                <a className="icon-footer-wrapper" href="#">
+                  <SvgIconCustom
+                    className={["icon-footer"]}
+                    src="assets/medium.svg"
+                  />
+                </a>
+                {/* <img src="/assets/icons/logo-medium.png" alt="logo" /> */}
               </div>
               <div className="icon-wrapper-soc ms-2">
-                <img src="/assets/icons/logo-twitter.png" alt="logo" />
+                <a className="icon-footer-wrapper" href="#">
+                  <SvgIconCustom
+                    className={["icon-footer"]}
+                    src="assets/twitter.svg"
+                  />
+                </a>
+                {/* <img src="/assets/icons/logo-twitter.png" alt="logo" /> */}
               </div>
             </div>
           </div>

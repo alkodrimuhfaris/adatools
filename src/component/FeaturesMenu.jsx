@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SvgIconFeatures from "./SvgIconFeatures";
+import SvgIconFeatures from "./SvgIconCustom";
 
 const dataFeature = [
   {
