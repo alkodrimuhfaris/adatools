@@ -6,6 +6,7 @@ import {
   useRouteMatch,
   Route,
   useParams,
+  Link,
 } from "react-router-dom";
 import actions from "../redux/actions/index";
 import Head from "./Head";
@@ -16,11 +17,12 @@ import Body from "./Body";
 export default function Layout() {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
-  const { parent } = useParams();
+  const { parent: par1, child } = useParams();
 
   const [width, setWidth] = React.useState(window.screen.availWidth);
   const [expanded, setExpanded] = React.useState(false);
   const { theme } = useSelector((state) => state.theme);
+  const [parent, setParent] = React.useState("");
 
   const setTheme = () => {
     dispatch(actions.theme.toggleTheme(theme));
@@ -44,9 +46,10 @@ export default function Layout() {
     };
   }, []);
 
-  // React.useEffect(() => {
-  //   console.log("route changed", parent)
-  // }, [parent])
+  React.useEffect(() => {
+    console.log("route changed!!!", par1);
+    setParent(par1);
+  }, [par1]);
 
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
@@ -94,61 +97,73 @@ export default function Layout() {
           <div className="top-small">
             <div className="container d-flex justify-content-between">
               <div className="d-flex text-white">
-                <div
-                  className={
-                    parent === "ether"
-                      ? "me-3 tab-top-selected"
-                      : "me-3 pointer"
-                  }
-                  onClick={
-                    parent !== "ether"
-                      ? () => (window.location.href = "/app/ether/main")
-                      : null
-                  }
+                <Link
+                  className="ver-1 text-decoration-none text-white"
+                  to={`/app/ether/${child}`}
+                  replace
                 >
-                  <img
-                    src="/assets/icons/ether.svg"
-                    alt="ether"
-                    className="logo-ether"
-                  />
-                  <p className="d-inline ms-1">Ether</p>
-                </div>
-                <div
-                  className={
-                    parent === "bsc" ? "me-3 tab-top-selected" : "me-3 pointer"
-                  }
-                  onClick={
-                    parent !== "bsc"
-                      ? () => (window.location.href = "/app/bsc/main")
-                      : null
-                  }
+                  <div
+                    className={
+                      parent === "ether"
+                        ? "me-3 tab-top-selected"
+                        : "me-3 pointer"
+                    }
+                    onClick={
+                      parent !== "ether" ? () => setParent("ether") : null
+                    }
+                  >
+                    <img
+                      src="/assets/icons/ethereum.png"
+                      alt="ether"
+                      className="logo-ether"
+                    />
+                    <p className="d-inline ms-1">Ether</p>
+                  </div>
+                </Link>
+                <Link
+                  className="ver-1 text-decoration-none text-white"
+                  to={`/app/bsc/${child}`}
+                  replace
                 >
-                  <img
-                    src="/assets/icons/bsc.png"
-                    alt="bsc"
-                    className="logo-ether"
-                  />
-                  <p className="d-inline ms-1">BSC</p>
-                </div>
-                <div
-                  className={
-                    parent === "polygon"
-                      ? "me-3 tab-top-selected"
-                      : "me-3 pointer"
-                  }
-                  onClick={
-                    parent !== "polygon"
-                      ? () => (window.location.href = "/app/polygon/main")
-                      : null
-                  }
+                  <div
+                    className={
+                      parent === "bsc"
+                        ? "me-3 tab-top-selected"
+                        : "me-3 pointer"
+                    }
+                    onClick={parent !== "bsc" ? () => setParent("bsc") : null}
+                  >
+                    <img
+                      src="/assets/icons/bsc.png"
+                      alt="bsc"
+                      className="logo-ether"
+                    />
+                    <p className="d-inline ms-1">BSC</p>
+                  </div>
+                </Link>
+                <Link
+                  className="ver-1 text-decoration-none text-white"
+                  to={`/app/polygon/${child}`}
+                  replace
                 >
-                  <img
-                    src="/assets/icons/polygon.png"
-                    alt="polygon"
-                    className="logo-ether"
-                  />
-                  <p className="d-inline ms-1">Polygon</p>
-                </div>
+                  <div
+                    className={
+                      parent === "polygon"
+                        ? "me-3 tab-top-selected"
+                        : "me-3 pointer"
+                    }
+                    onClick={
+                      parent !== "polygon" ? () => setParent("polygon") : null
+                    }
+                  >
+                    <img
+                      src="/assets/icons/polygon.png"
+                      alt="polygon"
+                      className="logo-ether"
+                    />
+                    <p className="d-inline ms-1">Polygon</p>
+                  </div>
+                </Link>
               </div>
               <div className={isMobile ? "d-none" : "ms-auto"}>
                 <span className="text-white">Next ADATShare: </span>

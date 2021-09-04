@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import dataJSON from "../../dto/data.json";
 import ChartGraph from "../../component/ChartGraph";
 import ChartWrapper from "../../component/ChartWrapper";
+import SvgIconCustom from "../../component/SvgIconCustom";
 
 export default function SushiPairExplorer() {
   const { theme } = useSelector((state) => state.theme);
@@ -380,7 +381,7 @@ export default function SushiPairExplorer() {
                     </i>
                   </div>
 
-                  <hr />
+                  
 
                   <div className="d-flex justify-content-start">
                     <div className="icon-wrapper-table me-2 pointer">
@@ -409,7 +410,7 @@ export default function SushiPairExplorer() {
                 <div className="card card-dark card-favorites">
                   <div className="card-body">
                     <h5 className="fw-bolder">FAVORITES</h5>
-                    <hr />
+                    
                     <div className="pe-2 list-code">
                       <div className="d-flex justify-content-between">
                         <p className="fw-bolder">META</p>
@@ -447,7 +448,7 @@ export default function SushiPairExplorer() {
                       <i className="material-icons up ms-2 f20">double_arrow</i>
                     </div>
 
-                    <hr />
+                    
 
                     <div className="centering-element">
                       <p className="text-red">(24h: -2.36%)</p>
@@ -544,7 +545,7 @@ export default function SushiPairExplorer() {
                   </div>
                 </div>
 
-                <hr />
+                
 
                 <div className="d-flex">
                   <p className="fw-bolder me-2 mb-2">Community Trust</p>
@@ -556,7 +557,7 @@ export default function SushiPairExplorer() {
                     <i className="material-icons">thumb_up</i>
                   </div>
                   <div className="hr-wrapper">
-                    <hr />
+                    
                   </div>
                   <div className="sip-ic">
                     <i className="material-icons">thumb_down</i>
@@ -581,7 +582,7 @@ export default function SushiPairExplorer() {
                   <h5>99</h5>
                 </div>
 
-                <hr />
+                
 
                 <div>
                   <div className="d-flex justify-content-between">
@@ -618,7 +619,7 @@ export default function SushiPairExplorer() {
                   <i className="material-icons color-purple ask-small">help</i>
                 </div>
 
-                <hr />
+                
 
                 <div className="up-featured mb-2">
                   <div className="d-flex">
@@ -632,14 +633,33 @@ export default function SushiPairExplorer() {
                   </div>
                 </div>
                 <div className="soc-icon mt-3 ">
-                  <div className="icon-wrapper-soc me-2 pointer">
-                    <img src="/assets/icons/logo-mail.png" alt="logo" />
+                  <div className="icon-wrapper-soc me-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/telegram.svg"
+                      />
+                      {/* <img src="/assets/icons/logo-telegram.png" alt="logo" /> */}
+                    </a>
                   </div>
-                  <div className="icon-wrapper-soc mx-2 pointer">
-                    <img src="/assets/icons/logo-medium.png" alt="logo" />
+                  <div className="icon-wrapper-soc mx-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/medium.svg"
+                      />
+                    </a>
+                    {/* <img src="/assets/icons/logo-medium.png" alt="logo" /> */}
                   </div>
-                  <div className="icon-wrapper-soc ms-2 pointer">
-                    <img src="/assets/icons/logo-twitter.png" alt="logo" />
+                  <div className="icon-wrapper-soc ms-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/twitter.svg"
+                        // src="./public/assets/twitter.svg"
+                      />
+                    </a>
+                    {/* <img src="/assets/icons/logo-twitter.png" alt="logo" /> */}
                   </div>
                 </div>
                 <div className="mt-2">
@@ -668,7 +688,7 @@ export default function SushiPairExplorer() {
                   <i className="material-icons color-purple ask-small">help</i>
                 </div>
 
-                <hr />
+                
 
                 <div className="text-center text-grey mb-3">No news</div>
 
@@ -679,14 +699,33 @@ export default function SushiPairExplorer() {
                   contact us
                 </div>
                 <div className="soc-icon mt-3 ">
-                  <div className="icon-wrapper-soc me-2 pointer">
-                    <img src="/assets/icons/logo-mail.png" alt="logo" />
+                  <div className="icon-wrapper-soc me-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/telegram.svg"
+                      />
+                      {/* <img src="/assets/icons/logo-telegram.png" alt="logo" /> */}
+                    </a>
                   </div>
-                  <div className="icon-wrapper-soc mx-2 pointer">
-                    <img src="/assets/icons/logo-medium.png" alt="logo" />
+                  <div className="icon-wrapper-soc mx-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/medium.svg"
+                      />
+                    </a>
+                    {/* <img src="/assets/icons/logo-medium.png" alt="logo" /> */}
                   </div>
-                  <div className="icon-wrapper-soc ms-2 pointer">
-                    <img src="/assets/icons/logo-twitter.png" alt="logo" />
+                  <div className="icon-wrapper-soc ms-2">
+                    <a className="icon-footer-wrapper" href="#">
+                      <SvgIconCustom
+                        className={["icon-footer"]}
+                        src="/assets/twitter.svg"
+                        // src="./public/assets/twitter.svg"
+                      />
+                    </a>
+                    {/* <img src="/assets/icons/logo-twitter.png" alt="logo" /> */}
                   </div>
                 </div>
               </div>

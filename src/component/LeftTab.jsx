@@ -195,7 +195,7 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/ether.svg",
+      icon: "/assets/icons/ethereum.png",
       name: "Ether",
       to: {
         pathname: "/app/ether/main",
@@ -276,7 +276,7 @@ export default function LeftTab(props) {
       to: "",
     },
     {
-      icon: "/assets/icons/ether.svg",
+      icon: "/assets/icons/ethereum.png",
       name: "Ether",
       to: {
         pathname: "/app/ether/main",

@@ -39,7 +39,7 @@ export default function Configuration() {
                 <div className="centering-element">
                   <h5 >CONFIGURABLE <span className="fw-bolder">PARAMETERS</span> </h5>
                 </div>
-                <hr />
+                
 
                 <div className="px-3">
                   <div className="d-flex mb-4 justify-content-between">

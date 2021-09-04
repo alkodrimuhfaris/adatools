@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SvgIcon from "../../component/SvgIcon";
+import SvgIconCustom from "../../component/SvgIconCustom";
+import TitleCard from "../../component/TitleCard";
 
 export default function DashboardPolygon(props) {
   console.log("props", props);
@@ -11,17 +14,12 @@ export default function DashboardPolygon(props) {
     <>
       <div className="row pt-4 px-4 row-no-padding ">
         <div className="col-md-4 col-sm-12 ">
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head ">
-              <div className="icon-wrapper-white me-3">
-                <img src="/assets/icons/babydb.png" alt="icon" />
-              </div>
-              <div className="centering-element">
-                <span className="fw-bolder"> QUICKSWAP </span>
-                TOOLS
-              </div>
-            </div>
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard
+              src="/assets/icons/babydb.png"
+              boldText="QUICKSWAP"
+              smallText="TOOLS"
+            />
             <div className="body-card">
               <div className="search-wrapper mb-2 position-relative">
                 <input
@@ -33,50 +31,62 @@ export default function DashboardPolygon(props) {
                   search
                 </i>
               </div>
-              <Link to="live-pair" className={`pair ${textCol} mb-2 d-block`}>
-                <img src="/assets/icons/11.svg" alt="icons" />
+              <Link
+                to="live-pair"
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
+              >
+                {/* <Link to="live-pair" className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}> */}
+                {/* <SvgIcon src="/assets/icons/11.svg" /> */}
+                <SvgIcon src="/assets/icons/11.svg" alt="icons" />
                 <span className="ps-2 ">Live New Pairs</span>
               </Link>
               <Link
                 to="pair-explorer"
                 className={`pair ${textCol} mb-2 d-block`}
               >
-                <img src="/assets/icons/12.svg" alt="icons" />
-                <span className="ps-2">Pair Explorer</span>
+                <div
+                  className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
+                >
+                  <SvgIcon src="/assets/icons/12.svg" alt="icons" />
+                  <span className="ps-2">Pair Explorer</span>
+                </div>
               </Link>
               {/* <div className="pair mb-2">
-              <img src="/assets/icons/11.svg" alt="icons" />
+              <SvgIcon src="/assets/icons/11.svg" alt="icons" />
               <span className="ps-2 ">Live New Pairs</span>
             </div>
             <div className="pair ">
-              <img src="/assets/icons/12.svg" alt="icons" />
+              <SvgIcon src="/assets/icons/12.svg" alt="icons" />
               <span className="ps-2">Pair Explorer</span>
             </div> */}
             </div>
           </div>
 
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head ">
-              <div className="icon-wrapper-white me-3">
-                <img src="/assets/logo_gram_dark.png" alt="icon" />
-              </div>
-              <div className="centering-element">
-                <span className="fw-bolder"> COMMON </span>
-                TOOLS
-              </div>
-            </div>
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard
+              smallText="TOOLS"
+              boldText="COMMON"
+              src="/assets/logo_gram_dark.png"
+            />
             <div className="body-card">
               <Link to="multiswap" className={`pair ${textCol} mb-2 d-block`}>
-                <img src="/assets/icons/13.svg" alt="icons" />
-                <span className="ps-2 ">MultiSwap</span>
+                <div
+                  className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
+                >
+                  <SvgIcon src="/assets/icons/13.svg" alt="icons" />
+                  <span className="ps-2 ">MultiSwap</span>
+                </div>
               </Link>
-              <div className="pair mb-2">
-                <img src="/assets/icons/01.svg" alt="icons" />
+              <div
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
+              >
+                <SvgIcon src="/assets/icons/01.svg" alt="icons" />
                 <span className="ps-2">Wallet Information</span>
               </div>
-              <div className="pair ">
-                <img src="/assets/icons/14.svg" alt="icons" />
+              <div
+                className={`pair ${textCol} mb-2 d-block d-flex align-items-center`}
+              >
+                <SvgIcon src="/assets/icons/14.svg" alt="icons" />
                 <span className="ps-2">New Pairs Bot</span>
               </div>
             </div>
@@ -84,15 +94,8 @@ export default function DashboardPolygon(props) {
         </div>
 
         <div className="col-md-4 col-sm-12 mb-4">
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head w-100">
-              <div className="centering-element w-100">
-                <div>HOT</div>
-                <span className="fw-bolder"> QUICKSWAP </span>
-              </div>
-            </div>
-
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard smallText="HOT" boldText="QUICKSWAP" center reverse />
 
             <div className="body-card">
               <div className="hot-list">
@@ -219,15 +222,13 @@ export default function DashboardPolygon(props) {
         </div>
 
         <div className="col-md-4 col-sm-12 mb-4">
-          <div className={`card ${bgCard} p-3 mb-4`}>
+          <div className={`card ${bgCard} mb-4`}>
             <div className="card-head w-100">
               <div className="centering-element w-100">
                 <div>FEATURED</div>
-                <span className="fw-bolder"> SPONSORS </span>
+                <span className="fw-bolder mr-2"> SPONSORS </span>
               </div>
             </div>
-
-            <hr />
 
             <div className="body-card text-center">
               <h6 className="fw-bolder pb-2">
@@ -235,14 +236,33 @@ export default function DashboardPolygon(props) {
               </h6>
               <p>Contact us:</p>
               <div className="soc-icon mt-3 centering-element">
-                <div className="icon-wrapper-soc me-2 pointer">
-                  <img src="/assets/icons/logo-mail.png" alt="logo" />
+                <div className="icon-wrapper-soc me-2">
+                  <a className="icon-footer-wrapper" href="#">
+                    <SvgIconCustom
+                      className={["icon-footer"]}
+                      src="/assets/telegram.svg"
+                    />
+                    {/* <img src="/assets/icons/logo-telegram.png" alt="logo" /> */}
+                  </a>
                 </div>
-                <div className="icon-wrapper-soc mx-2 pointer">
-                  <img src="/assets/icons/logo-medium.png" alt="logo" />
+                <div className="icon-wrapper-soc mx-2">
+                  <a className="icon-footer-wrapper" href="#">
+                    <SvgIconCustom
+                      className={["icon-footer"]}
+                      src="/assets/medium.svg"
+                    />
+                  </a>
+                  {/* <img src="/assets/icons/logo-medium.png" alt="logo" /> */}
                 </div>
-                <div className="icon-wrapper-soc ms-2 pointer">
-                  <img src="/assets/icons/logo-twitter.png" alt="logo" />
+                <div className="icon-wrapper-soc ms-2">
+                  <a className="icon-footer-wrapper" href="#">
+                    <SvgIconCustom
+                      className={["icon-footer"]}
+                      src="/assets/twitter.svg"
+                      // src="./public/assets/twitter.svg"
+                    />
+                  </a>
+                  {/* <img src="/assets/icons/logo-twitter.png" alt="logo" /> */}
                 </div>
               </div>
             </div>
@@ -252,17 +272,12 @@ export default function DashboardPolygon(props) {
 
       <div className="row pt-4 px-4 row-no-padding ">
         <div className="col-md-4 col-sm-12 ">
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head ">
-              <div className="icon-wrapper-white me-3">
-                <img src="/assets/icons/babydb.png" alt="icon" />
-              </div>
-              <div className="centering-element">
-                <span className="fw-bolder"> BAKERYSWAP </span>
-                TOOLS
-              </div>
-            </div>
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard
+              src="/assets/pancake.png"
+              boldText="BAKERYSWAP"
+              smallText="TOOLS"
+            />
             <div className="body-card p-4">
               <p className="text-center">Coming soon</p>
             </div>
@@ -270,17 +285,12 @@ export default function DashboardPolygon(props) {
         </div>
 
         <div className="col-md-4 col-sm-12 mb-4">
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head ">
-              <div className="icon-wrapper-white me-3">
-                <img src="/assets/icons/babydb.png" alt="icon" />
-              </div>
-              <div className="centering-element">
-                <span className="fw-bolder"> BAKERYSWAP </span>
-                TOOLS
-              </div>
-            </div>
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard
+              smallText="TOOLS"
+              boldText="BAKERYSWAP"
+              src="/assets/icons/burgerswap.png"
+            />
             <div className="body-card p-4">
               <p className="text-center">Coming soon</p>
             </div>
@@ -288,17 +298,12 @@ export default function DashboardPolygon(props) {
         </div>
 
         <div className="col-md-4 col-sm-12 mb-4">
-          <div className={`card ${bgCard} p-3 mb-4`}>
-            <div className="card-head ">
-              <div className="icon-wrapper-white me-3">
-                <img src="/assets/icons/babydb.png" alt="icon" />
-              </div>
-              <div className="centering-element">
-                <span className="fw-bolder"> BAKERYSWAP </span>
-                TOOLS
-              </div>
-            </div>
-            <hr />
+          <div className={`card ${bgCard} mb-4`}>
+            <TitleCard
+              smallText="FEEDBACK"
+              boldText="COMMUNITY"
+              src="/assets/logo_gram_dark.png"
+            />
             <div className="body-card p-4">
               <p className="text-center">Coming soon</p>
             </div>

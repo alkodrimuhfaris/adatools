@@ -2,7 +2,7 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 
 export default function SvgIcon({ src = "/assets/icons/17.svg" }) {
-  return src === "/assets/icons/ether.svg" ||
+  return src === "/assets/icons/ethereum.png" ||
     src === "/assets/icons/bsc.png" ||
     src === "/assets/icons/polygon.png" ? (
     <img src={src} alt="icons" />
