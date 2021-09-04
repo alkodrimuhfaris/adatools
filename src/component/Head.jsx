@@ -7,7 +7,7 @@ export default function Head(props) {
         <img src="/assets/logo_gram.png" alt="logo" />
       </div> */}
       <div className="icon-cam centering-element">
-        <i className="material-icons">photo_camera</i>
+        <img height="50%" src="/assets/image.png" alt="cam" />
       </div>
     </div>
   )
