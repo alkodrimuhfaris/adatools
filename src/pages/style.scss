@@ -414,6 +414,7 @@
         width: 15%;
         .light & {
           background-color: #4f2f7c !important;
+          color: black;
         }
       }
       .input-wrapper {
@@ -908,6 +909,9 @@
     height: 100%;
     border-radius: 300px;
     background-color: white;
+    .light & {
+      box-shadow: 0px 0px 8px 5px #e5ddf3;
+    }
   }
   .light & {
     &::after {
@@ -974,14 +978,13 @@
 
 .card {
   // background: #eee;
-  box-shadow: 0 8px 16px rgb(0 0 0);
+  box-shadow: 0 8px 16px 5px rgb(0 0 0);
   transition: box-shadow 1s ease;
   .light & {
-    box-shadow: 0 8px 16px #e5ddf3 !important;
+    box-shadow: 0 8px 16px 5px #e5ddf3 !important;
     transition: box-shadow 1s ease;
     &:hover {
-      box-shadow:
-        0 8px 8px -4px rgba(47, 202, 221, 1);
+      box-shadow: 0 8px 8px -4px rgba(47, 202, 221, 1);
       // animation: shadowChanger 2s infinite;
       animation-name: hoverShadow;
       animation-duration: 4s;
@@ -1257,12 +1260,20 @@
   display: flex;
   .input-wrapper {
     position: relative;
+    .light & {
+      // background-color: #4f2f7c !important;
+      color: black !important;
+    }
   }
   i {
     position: absolute;
     right: 5%;
     top: 15%;
     color: white;
+    .light & {
+      // background-color: #4f2f7c !important;
+      color: #4f2f7c !important;
+    }
     &.refresh-icon {
       position: relative;
     }
@@ -1271,6 +1282,10 @@
     background-color: #030207;
     border: none;
     color: whitesmoke;
+    .light & {
+      // background-color: #4f2f7c !important;
+      color: #4f2f7c !important;
+    }
   }
   .refresh-div-search {
     display: flex;
