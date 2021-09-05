@@ -387,7 +387,7 @@ body {
   }
 
   .t-selected {
-    background-color: aqua;
+    background-color: #0dcaf0;
     height: 35px;
     display: flex;
     justify-content: start;
@@ -540,7 +540,7 @@ body {
   }
 
   .t-selected {
-    background-color: aqua;
+    background-color: #0dcaf0;
     height: 35px;
     display: flex;
     justify-content: start;
@@ -556,7 +556,7 @@ body {
       height: 0;
       border-top: 17.5px solid transparent;
       border-bottom: 17.5px solid transparent;
-      border-left: 17.5px solid aqua;
+      border-left: 17.5px solid #0dcaf0;
 
       border-right: 17.5px solid transparent;
       position: absolute;
@@ -587,7 +587,7 @@ body {
       }
     }
     & p.text-menu.dark {
-      color: #4f2f7c !important;
+      color: white !important;
     }
     & .icons {
       margin-right: 1.75rem;
@@ -851,11 +851,11 @@ body {
     }
   }
   & p.text-menu.dark {
-    color: #4f2f7c !important;
+    color: white !important;
   }
   & .icons {
     margin-right: 1.75rem;
-    fill: #030207;
+    fill: white;
     .light & {
       fill: white !important;
     }
