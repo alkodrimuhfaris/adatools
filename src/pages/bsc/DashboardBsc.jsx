@@ -16,7 +16,7 @@ export default function Dashboard(props) {
         <div className="col-md-4 col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
-              src="/assets/icons/babydb.png"
+              src="/assets/pancake.png"
               boldText="PANCAKE"
               smallText="TOOLS"
             />
