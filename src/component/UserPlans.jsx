@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col, Card } from "react-bootstrap";
+import SvgIconCustom from "./SvgIconCustom";
 
 export default function UserPlans() {
   return (
@@ -175,16 +176,32 @@ export default function UserPlans() {
               <span className="material-icons check-purple"> done</span>
               <span className="vertical-super">Token/token pairs</span>
             </div>
-            <div>
+            <div className="d-flex align-items-center mt-1 mb-1">
               <span className="material-icons check-purple"> done</span>
               <span className="vertical-super text-purple fw-bolder">
-                ADATshare
+                <a href="#" className="d-flex purple-text align-items-center ver-1 font-bold text-decoration-none">
+                  ADATshare{" "}
+                  <span style={{ marginLeft: "0.5em" }}>
+                    <SvgIconCustom
+                      src={"/assets/icons/34.svg"}
+                      className={["premium-open"]}
+                    />
+                  </span>
+                </a>
               </span>
             </div>
-            <div>
+            <div className="d-flex align-items-center mt-1 mb-1">
               <span className="material-icons check-purple"> done</span>
               <span className="vertical-super text-purple fw-bolder">
-                ADATforce & ADATforce Ventures
+                <a href="#" className="d-flex purple-text align-items-center ver-1 font-bold text-decoration-none">
+                  ADATforce & ADATforce Ventures{" "}
+                  <span style={{ marginLeft: "0.5em" }}>
+                    <SvgIconCustom
+                      src={"/assets/icons/34.svg"}
+                      className={["premium-open"]}
+                    />
+                  </span>
+                </a>
               </span>
             </div>
             <div>

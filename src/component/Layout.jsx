@@ -74,7 +74,7 @@ export default function Layout() {
       <Head isMobile={isMobile} />
 
       {/* body  */}
-      <div className="d-flex position-relative h-100">
+      <div className="d-flex position-relative h-100 parent">
         <button
           className="button-expand-mobile"
           onClick={() => setExpanded(!expanded)}

@@ -632,11 +632,14 @@ body {
       content: "";
       top: 0;
       right: 3em;
-      width: 0;
+      width: 0px;
       height: 4em;
       background-color: #36065c;
       background-clip: padding-box;
-      border: 1em solid #36065c;
+      // border: 1.1em solid #36065c;
+      border-left: 1.5em solid #36065c;
+      border-right: 1.5em solid #36065c;
+      border-top: 3.1em solid #36065c;
       border-bottom: 1em solid transparent;
     }
   }
