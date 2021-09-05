@@ -99,7 +99,7 @@ export default function Layout() {
               <div className="d-flex text-white">
                 <Link
                   className="ver-1 text-decoration-none text-white"
-                  to={`/app/ether/${child}`}
+                  to={`/app/ether/main`}
                   replace
                 >
                   <div
@@ -122,7 +122,7 @@ export default function Layout() {
                 </Link>
                 <Link
                   className="ver-1 text-decoration-none text-white"
-                  to={`/app/bsc/${child}`}
+                  to={`/app/bsc/main`}
                   replace
                 >
                   <div
@@ -143,7 +143,7 @@ export default function Layout() {
                 </Link>
                 <Link
                   className="ver-1 text-decoration-none text-white"
-                  to={`/app/polygon/${child}`}
+                  to={`/app/polygon/main`}
                   replace
                 >
                   <div

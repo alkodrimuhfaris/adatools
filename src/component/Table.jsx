@@ -3,13 +3,21 @@ import dataLife from "../dto/liveFairData";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import Pagination from "./Pagination";
+import HeadTable from "./HeadTable";
 
 export default function Table({ data = [] }) {
   const dispatch = useDispatch();
   const [rowData, setRowData] = React.useState([]);
+  const [orderBy, setOrderBy] = React.useState(0);
+  const [orderIn, setOrderIn] = React.useState("asc");
   const { liveFairPage: currentPage } = useSelector(
     (state) => state.pagination
   );
+
+  const setOrder = (ob, oi) => {
+    setOrderBy(ob);
+    setOrderIn(oi);
+  };
 
   const RowData = [
     {
@@ -18,6 +26,9 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values token">{data}</span>
+      ),
     },
     {
       field: "listed",
@@ -25,20 +36,32 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values listed">{data}</span>
+      ),
     },
     {
-      field: "contract",
+      field: "actions",
       Text: () => <span className="pg-button-wrapper">Actions</span>,
       sortAsc: false,
       sortDesc: false,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values actions">actions</span>
+      ),
+    },
+    {
+      field: "contractDetails",
+      Text: () => <span className="pg-button-wrapper">Contract Details</span>,
+      sortAsc: true,
+      sortDesc: true,
+      actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values contract-details">contract-details</span>
+      ),
     },
     {
       field: "tokenPrice",
-      Text: () => <span className="pg-button-wrapper">Contract Detail</span>,
-    },
-    {
-      field: "actions",
       Text: () => (
         <span className="pg-button-wrapper">
           Token Price: <span className="text-blue">BNB</span>{" "}
@@ -47,13 +70,9 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
-    },
-    {
-      field: "contractDetails",
-      Text: () => <span className="pg-button-wrapper">Contract Details</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values token-price">{data}</span>
+      ),
     },
     {
       field: "liquidity",
@@ -61,6 +80,9 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values liquidity">{data}</span>
+      ),
     },
     {
       field: "poolAmount",
@@ -68,6 +90,9 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values pool-amount">{data}</span>
+      ),
     },
     {
       field: "poolVariation",
@@ -75,6 +100,26 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "-40%" }) => {
+        data = parseFloat(data);
+        return (
+          <span className="col-values pool-variation">
+            <span
+              className={`pool-var-cover ${
+                data < 0
+                  ? "danger"
+                  : data >= 0 && data < 50
+                  ? "normal"
+                  : data >= 50
+                  ? "good"
+                  : "normal"
+              }`}
+            >
+              {data}%
+            </span>
+          </span>
+        );
+      },
     },
     {
       field: "poolRemaining",
@@ -82,6 +127,9 @@ export default function Table({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values pool-remaining">{data}</span>
+      ),
     },
   ];
 
@@ -99,82 +147,54 @@ export default function Table({ data = [] }) {
   }, []);
 
   return (
-    <div className="table-stylized w-100">
+    <div className="table-stylized shadow-no-stylized w-100">
       <table className="w-100">
         <thead className="table-head">
           <tr>
-            {rowData.map((val, key) => {
-              return <th key={key}>{val}</th>;
+            {RowData.map((val, key) => {
+              const { Text, sortAsc, sortDesc } = val;
+              return (
+                <th key={key}>
+                  <HeadTable
+                    Text={() => <Text />}
+                    orderAsc={sortAsc}
+                    orderDesc={sortDesc}
+                    setOrder={key === orderBy}
+                    orderIn={orderIn}
+                    orderBtn={(n) => {
+                      setOrder(key, n);
+                    }}
+                  />
+                </th>
+              );
             })}
           </tr>
         </thead>
 
-        <tbody style={{maxHeight: 300, height: 'auto'}} className="table-body">
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
-          <tr>
-            {rowData.map((val, key) => {
-              return <td key={key}>{val}</td>;
-            })}
-          </tr>
+        <tbody
+          style={{ maxHeight: 300, height: "auto" }}
+          className="table-body"
+        >
+          {dataLife.map((val1, key1) => {
+            return (
+              <tr key={key1}>
+                {RowData.map((val2, key2) => {
+                  const data = [null];
+                  const { Value } = val2;
+                  for (let field1 in val1) {
+                    if (field1 === val2.field) {
+                      data[0] = val1[field1];
+                    }
+                  }
+                  return (
+                    <td key={key2}>
+                      <Value data={data[0]} />
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
         <tfoot className="table-foot">
           <tr>
@@ -195,4 +215,3 @@ export default function Table({ data = [] }) {
     </div>
   );
 }
-
