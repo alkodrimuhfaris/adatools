@@ -1,54 +1,144 @@
 import React from "react";
-import dataLife from "../dto/liveFairData";
+import dataPair from "../dto/pairExplorerData";
 import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import Pagination from "./Pagination";
 import HeadTable from "./HeadTable";
 
-export default function Table({ data = [] }) {
+export default function TablePairExplorer({ data = [] }) {
   const dispatch = useDispatch();
   const [rowData, setRowData] = React.useState([]);
   const {
-    liveFairPage: currentPage,
-    liveFairOrderBy: orderBy,
-    liveFairOrderIn: orderIn,
+    pairExplorerPage: currentPage,
+    pairExplorerBy: orderBy,
+    pairExplorerIn: orderIn,
   } = useSelector((state) => state.pagination);
 
   const setOrder = (ob, oi) => {
-    dispatch(actions.tablePagination.livePairsOrderBy(ob));
-    dispatch(actions.tablePagination.livePairsOrderIn(oi));
+    dispatch(actions.tablePagination.pairExplorerBy(ob));
+    dispatch(actions.tablePagination.pairExplorerOrderIn(oi));
   };
 
   const RowData = [
     {
-      field: "token",
-      Text: () => <span className="pg-button-wrapper">Token</span>,
+      field: "date",
+      Text: () => <span className="pg-button-wrapper">Date</span>,
       sortAsc: true,
       sortDesc: true,
       actions: null,
       Value: ({ data = "test" }) => (
-        <span className="col-values token">{data}</span>
+        <span className="col-values clear date">{data}</span>
       ),
     },
     {
-      field: "listed",
-      Text: () => <span className="pg-button-wrapper">Listed Since</span>,
+      field: "type",
+      Text: () => <span className="pg-button-wrapper">Type</span>,
+      sortAsc: true,
+      sortDesc: true,
+      actions: null,
+      Value: ({ data = "data" }) => {
+        return (
+          <span
+            className={`col-values clear type ${data === "Sell" ? "sell" : "buy"}`}
+          >
+            {data}
+          </span>
+        );
+      },
+    },
+    {
+      field: "priceUSD",
+      Text: () => (
+        <span className="pg-button-wrapper">
+          Price <span className="text-blue">USD</span>
+        </span>
+      ),
+      sortAsc: false,
+      sortDesc: false,
+      actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values clear priceUSD">{data}</span>
+      ),
+    },
+    {
+      field: "priceBNB",
+      Text: () => (
+        <span className="pg-button-wrapper">
+          Price <span className="text-blue">BNB</span>
+        </span>
+      ),
       sortAsc: true,
       sortDesc: true,
       actions: null,
       Value: ({ data = "test" }) => (
-        <span className="col-values listed">{data}</span>
+        <span className="col-values clear priceBNB">{data}</span>
+      ), 
+    },
+    {
+      field: "amount",
+      Text: () => (
+        <span className="pg-button-wrapper">
+          Amount <span className="text-blue">ADAT</span>
+        </span>
+      ),
+      sortAsc: true,
+      sortDesc: true,
+      actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values clear amount">{data}</span>
       ),
     },
     {
-      field: "actions",
-      Text: () => <span className="pg-button-wrapper">Actions</span>,
+      field: "totalBNB",
+      Text: () => (
+        <span className="pg-button-wrapper">
+          Total <span className="text-blue">BNB</span>
+        </span>
+      ),
+      sortAsc: true,
+      sortDesc: true,
+      actions: null,
+      Value: ({ data = "test" }) => (
+        <span className="col-values clear totalBNB">{data}</span>
+      ),
+    },
+    {
+      field: "maker",
+      Text: () => <span className="pg-button-wrapper">Maker</span>,
+      sortAsc: true,
+      sortDesc: true,
+      actions: null,
+      Value: ({ data = "test" }) => {
+        function middleElipsis(str) {
+          if (str.length > 10) {
+            return (
+              str.substr(0, 5) + "..." + str.substr(str.length - 4, str.length)
+            );
+          }
+          return str;
+        }
+        return (
+          <span className="col-values clear maker">
+            <span className="maker-ellipsed">{middleElipsis(data)}</span>
+            <span className="tooltip-table">{data}</span>
+          </span>
+        );
+      },
+    },
+    {
+      field: "others",
+      Text: () => <span className="pg-button-wrapper">Others</span>,
       sortAsc: false,
       sortDesc: false,
       actions: null,
       Value: ({
         data = [],
-        toolTips = ["desc-1", "desc-2", "desc-3", "desc-4"],
+        toolTips = [
+          "desc-1",
+          "desc-2",
+          "desc-3",
+          "desc-4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        ],
       }) => (
         <span className="col-values actions">
           <div className="icon-table-container">
@@ -102,120 +192,11 @@ export default function Table({ data = [] }) {
         </span>
       ),
     },
-    {
-      field: "contractDetails",
-      Text: () => <span className="pg-button-wrapper">Contract Details</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({
-        data = [],
-        toolTips = ["desc-1", "desc-2", "desc-3", "desc-4"],
-      }) => (
-        <span className="col-values contract-details">
-          <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[0] ? "" : "disable"}`}>
-              <img src="/assets/icons/21.svg" alt="icon" />
-            </div>
-            <div className="tooltip-table">{toolTips[0]}</div>
-          </div>
-          <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[1] ? "" : "disable"}`}>
-              <img src="/assets/icons/20.svg" alt="icon" />
-            </div>
-            <div className="tooltip-table">{toolTips[1]}</div>
-          </div>
-          <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[2] ? "" : "disable"}`}>
-              <img src="/assets/icons/19.svg" alt="icon" />
-            </div>
-            <div className="tooltip-table">{toolTips[2]}</div>
-          </div>
-          <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[3] ? "" : "disable"}`}>
-              <img src="/assets/icons/18.svg" alt="icon" />
-            </div>
-            <div className="tooltip-table">{toolTips[3]}</div>
-          </div>
-        </span>
-      ),
-    },
-    {
-      field: "tokenPrice",
-      Text: () => (
-        <span className="pg-button-wrapper">
-          Token Price: <span className="text-blue">BNB</span>{" "}
-        </span>
-      ),
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({ data = "test" }) => (
-        <span className="col-values token-price">{data}</span>
-      ),
-    },
-    {
-      field: "liquidity",
-      Text: () => <span className="pg-button-wrapper">Total Liquidity</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({ data = "test" }) => (
-        <span className="col-values liquidity">{data}</span>
-      ),
-    },
-    {
-      field: "poolAmount",
-      Text: () => <span className="pg-button-wrapper">Pool Amount</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({ data = "test" }) => (
-        <span className="col-values pool-amount">{data}</span>
-      ),
-    },
-    {
-      field: "poolVariation",
-      Text: () => <span className="pg-button-wrapper">Pool Variation</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({ data = "-40%" }) => {
-        data = parseFloat(data);
-        return (
-          <span className="col-values pool-variation">
-            <span
-              className={`pool-var-cover ${
-                data < 0
-                  ? "danger"
-                  : data >= 0 && data < 50
-                  ? "normal"
-                  : data >= 50
-                  ? "good"
-                  : "normal"
-              }`}
-            >
-              {data}%
-            </span>
-          </span>
-        );
-      },
-    },
-    {
-      field: "poolRemaining",
-      Text: () => <span className="pg-button-wrapper">Pool Remaining</span>,
-      sortAsc: true,
-      sortDesc: true,
-      actions: null,
-      Value: ({ data = "test" }) => (
-        <span className="col-values pool-remaining">{data}</span>
-      ),
-    },
   ];
 
   React.useEffect(() => {
     const nRow = [];
-    for (let el in dataLife[0]) {
+    for (let el in dataPair[0]) {
       if (el === "id") {
         continue;
       } else {
@@ -255,7 +236,7 @@ export default function Table({ data = [] }) {
           style={{ maxHeight: 300, height: "auto" }}
           className="table-body"
         >
-          {dataLife.map((val1, key1) => {
+          {dataPair.map((val1, key1) => {
             return (
               <tr key={key1}>
                 {RowData.map((val2, key2) => {
@@ -284,7 +265,7 @@ export default function Table({ data = [] }) {
                   page={currentPage}
                   maxPage={10}
                   pageAction={(val) =>
-                    dispatch(actions.tablePagination.livePairs(val))
+                    dispatch(actions.tablePagination.pairExplorer(val))
                   }
                 />
               </div>

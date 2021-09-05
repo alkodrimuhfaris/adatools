@@ -1,6 +1,7 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { useSelector } from 'react-redux';
+import Table from '../../component/Table';
 
 export default function SushiLivePairs() {
   const { theme } = useSelector((state) => state.theme);
@@ -517,12 +518,7 @@ export default function SushiLivePairs() {
         </div>
         <p className="text-grey pb-5">Search for live new pairs and pool updates</p>
 
-        <BootstrapTable
-          keyField='id' 
-          data={ data } 
-          columns={ columns } 
-          bordered={ false }
-        />
+        <Table />
 
         <div style={{ height: 100, width: "100%" }} />
 

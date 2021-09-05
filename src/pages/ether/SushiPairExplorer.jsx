@@ -5,6 +5,7 @@ import dataJSON from "../../dto/data.json";
 import ChartGraph from "../../component/ChartGraph";
 import ChartWrapper from "../../component/ChartWrapper";
 import SvgIconCustom from "../../component/SvgIconCustom";
+import TablePairExplorer from "../../component/TablePairExplorer";
 
 export default function SushiPairExplorer() {
   const { theme } = useSelector((state) => state.theme);
@@ -547,8 +548,8 @@ export default function SushiPairExplorer() {
 
                 
 
-                <div className="d-flex">
-                  <p className="fw-bolder me-2 mb-2">Community Trust</p>
+                <div className="d-flex align-items-center my-2">
+                  <p className="fw-bolder me-2">Community Trust</p>
                   <i className="material-icons color-purple ask-small">help</i>
                 </div>
 
@@ -612,8 +613,8 @@ export default function SushiPairExplorer() {
             {/* top sponsor  */}
             <div className="card card-dark mb-3">
               <div className="card-body">
-                <div className="d-flex justify-content-between">
-                  <h5>
+                <div className="d-flex align-items-center my-2 justify-content-between">
+                  <h5 className="m-0 p-0">
                     TOP <span className="fw-bolder">SPONSOR</span>{" "}
                   </h5>
                   <i className="material-icons color-purple ask-small">help</i>
@@ -681,8 +682,8 @@ export default function SushiPairExplorer() {
             {/* token news  */}
             <div className="card card-dark">
               <div className="card-body">
-                <div className="d-flex justify-content-between">
-                  <h5>
+                <div className="d-flex align-items-center my-2 justify-content-between">
+                  <h5 className="m-0 p-0">
                     TOKEN <span className="fw-bolder">NEWS</span>
                   </h5>
                   <i className="material-icons color-purple ask-small">help</i>
@@ -745,12 +746,7 @@ export default function SushiPairExplorer() {
                 </div>
               </div>
             </div>
-            <BootstrapTable
-              keyField="id"
-              data={data}
-              columns={columns}
-              bordered={false}
-            />
+            <TablePairExplorer />
           </div>
         </div>
       </div>

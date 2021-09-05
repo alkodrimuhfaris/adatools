@@ -1,6 +1,7 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import { useSelector } from 'react-redux';
+import TablePairExplorer from '../../component/TablePairExplorer';
 
 export default function SushiBigSwap() {
   const { theme } = useSelector((state) => state.theme);
@@ -517,12 +518,7 @@ export default function SushiBigSwap() {
         </div>
         <p className="text-grey pb-5">Show latest big swaps in uniswap with useful</p>
 
-        <BootstrapTable 
-          keyField='id' 
-          data={ data } 
-          columns={ columns } 
-          bordered={ false }
-        />
+        <TablePairExplorer />
 
         <div style={{ height: 100, width: "100%" }} />
 
