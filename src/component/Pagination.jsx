@@ -45,6 +45,7 @@ export default function Pagination({
     <div className="pagination">
       <span className="pg-button-wrapper">
         <button
+          disabled={page === 1}
           type="button"
           onClick={() => {
             pageAction(1);
@@ -57,6 +58,7 @@ export default function Pagination({
       <span className="pg-button-wrapper">
         <button
           type="button"
+          disabled={page === 1}
           onClick={() => {
             pageAction(page - 1);
           }}
@@ -82,6 +84,7 @@ export default function Pagination({
       {!nextElipsis ? null : <span className="pg-button-wrapper">...</span>}
       <span className="pg-button-wrapper">
         <button
+          disabled={page === maxPage}
           type="button"
           onClick={() => {
             pageAction(page + 1);
@@ -93,6 +96,7 @@ export default function Pagination({
       </span>
       <span className="pg-button-wrapper">
         <button
+          disabled={page === maxPage}
           type="button"
           onClick={() => {
             pageAction(maxPage);
