@@ -1109,6 +1109,7 @@ body {
   // background: #eee;
   box-shadow: 0 8px 16px 5px rgb(0 0 0);
   transition: box-shadow 1s ease;
+  border-radius: 10px;
   .light & {
     box-shadow: 0 8px 16px 5px #dbd1ef !important;
     // box-shadow: 0 4px 8px 4px #dbd1ef !important;
