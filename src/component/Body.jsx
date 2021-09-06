@@ -108,7 +108,7 @@ export default function Body(props) {
   console.log('props', props)
 
   return (
-    <div >
+    <div className="container">
       <Route path={'/app/:parent/:child'} >
         {url.map((i, id) => {
           if (i.name === child) {

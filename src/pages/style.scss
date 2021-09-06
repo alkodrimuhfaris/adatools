@@ -136,7 +136,7 @@ body {
   }
   &.icons {
     height: 2em;
-    width: 1.5em;
+    width: 2em;
     // margin-right: 1.75rem;
     fill: white;
     .light & {
@@ -434,6 +434,7 @@ body {
 
   .right-body {
     flex: 1;
+    margin-left: 0px !important;
   }
 
   .top-search-title {
@@ -714,7 +715,7 @@ body {
     height: 35px;
     display: flex;
     justify-content: start;
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
     align-items: center;
     cursor: pointer;
     img {
@@ -782,6 +783,58 @@ body {
 
   .con-left {
     max-width: 70%;
+  }
+
+  .top-right-text-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    overflow: hidden; 
+    white-space: nowrap;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & .top-right-text {
+      display: inline-block;
+      width: auto;
+      padding-left: 100%;
+      animation: running-text 10s linear infinite;
+    }
+  }
+}
+
+@keyframes running-text {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .top-right-text-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .top-right-text-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .top-right-text-container {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .top-right-text-container {
+    width: 60%;
   }
 }
 
@@ -882,6 +935,7 @@ body {
 
 .right-body {
   flex: 1;
+  margin-left: 29px;
 }
 
 .text-blue {
@@ -1239,7 +1293,7 @@ body {
 }
 
 .live-trading-button {
-  background-color: lightgreen;
+  background-color: #00FF01;
   color: white;
   border: none;
   border-radius: 8px;

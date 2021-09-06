@@ -13,7 +13,7 @@ export default function DashboardEther(props) {
   return (
     <>
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/icons/babydb.png"
@@ -125,7 +125,7 @@ export default function DashboardEther(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               smallText="HOT"
@@ -384,7 +384,7 @@ export default function DashboardEther(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               reverse
@@ -492,7 +492,7 @@ export default function DashboardEther(props) {
       </div>
 
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/pancake.png"
@@ -506,7 +506,7 @@ export default function DashboardEther(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/burgerswap.png"
@@ -520,7 +520,7 @@ export default function DashboardEther(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/logo_gram_dark.png"

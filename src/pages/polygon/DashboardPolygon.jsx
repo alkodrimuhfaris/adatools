@@ -13,7 +13,7 @@ export default function DashboardPolygon(props) {
   return (
     <>
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/icons/babydb.png"
@@ -93,7 +93,7 @@ export default function DashboardPolygon(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard smallText="HOT" boldText="QUICKSWAP" center reverse />
 
@@ -221,7 +221,7 @@ export default function DashboardPolygon(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <div className="card-head w-100">
               <div className="centering-element w-100">
@@ -271,7 +271,7 @@ export default function DashboardPolygon(props) {
       </div>
 
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/pancake.png"
@@ -284,7 +284,7 @@ export default function DashboardPolygon(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               smallText="TOOLS"
@@ -297,7 +297,7 @@ export default function DashboardPolygon(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               smallText="FEEDBACK"

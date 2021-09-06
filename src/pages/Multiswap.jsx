@@ -20,8 +20,8 @@ export default function Multiswap() {
         </div>
         
         <div className="row mt-4 text-white">
-          <div className="col-sm-12 col-md-4 "></div>
-          <div className="col-sm-12 col-md-4 text-center">
+          <div className="col-sm-12 col-md-6 col-lg-4  "></div>
+          <div className="col-sm-12 col-md-6 col-lg-4  text-center">
             <div className="d-flex justify-content-center">
               <div className="icon-purple-wrapper">
                 <img src="/assets/icons/13.svg" alt="icon" />
@@ -36,7 +36,7 @@ export default function Multiswap() {
             <p className="pt-5">In order for it to work properly please accept uniswap conditions each time you add pair</p>
 
           </div>
-          <div className="col-sm-12 col-md-4 "></div>
+          <div className="col-sm-12 col-md-6 col-lg-4  "></div>
         </div>
         
       </div>

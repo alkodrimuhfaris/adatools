@@ -165,11 +165,19 @@ export default function Layout() {
                   </div>
                 </Link>
               </div>
-              <div className={isMobile ? "d-none" : "ms-auto"}>
-                <span className="text-white">Next ADATShare: </span>
-                <span className="text-blue">2021-09-01 - 1,252,964 ADAT </span>
-                <span className="text-white">| Next Token Burn: </span>
-                <span className="text-blue">2021-09-01 - 28,107 ADAT</span>
+              <div
+                className={
+                  isMobile ? "d-none" : "top-right-text-container"
+                }
+              >
+                <div className="top-right-text">
+                  <span className="text-white">Next ADATShare: </span>
+                  <span className="text-blue">
+                    2021-09-01 - 1,252,964 ADAT{" "}
+                  </span>
+                  <span className="text-white">| Next Token Burn: </span>
+                  <span className="text-blue">2021-09-01 - 28,107 ADAT</span>
+                </div>
               </div>
             </div>
           </div>

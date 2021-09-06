@@ -32,8 +32,8 @@ export default function Configuration() {
         </div>
         
         <div className="row mt-4 text-white user-card-wrapper">
-          <div className="col-md-4 col-sm-12"></div>
-          <div className="col-md-4 col-sm-12">
+          <div className="col-md-6 col-lg-4  col-sm-12"></div>
+          <div className="col-md-6 col-lg-4  col-sm-12">
             <div className="card card-dark">
               <div className="card-body">
                 <div className="centering-element">
@@ -104,7 +104,7 @@ export default function Configuration() {
               </div>
             </div>
           </div>
-          <div className="col-md-4 col-sm-12"></div>
+          <div className="col-md-6 col-lg-4  col-sm-12"></div>
         </div>
         
       </div>

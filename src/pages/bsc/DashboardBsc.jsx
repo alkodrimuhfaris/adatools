@@ -13,7 +13,7 @@ export default function Dashboard(props) {
   return (
     <>
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               src="/assets/pancake.png"
@@ -80,7 +80,7 @@ export default function Dashboard(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard smallText="HOT" center boldText="PANCAKE" reverse />
 
@@ -208,7 +208,7 @@ export default function Dashboard(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard smallText="FEATURED" boldText="PANCAKE" reverse center />
 
@@ -330,7 +330,7 @@ export default function Dashboard(props) {
       </div>
 
       <div className="row pt-4 px-4 row-no-padding ">
-        <div className="col-md-4 col-sm-12 ">
+        <div className="col-md-6 col-lg-4  col-sm-12 ">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               boldText="BAKERYSWAP"
@@ -344,7 +344,7 @@ export default function Dashboard(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               boldText="BAKERYSWAP"
@@ -358,7 +358,7 @@ export default function Dashboard(props) {
           </div>
         </div>
 
-        <div className="col-md-4 col-sm-12 mb-4">
+        <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
             <TitleCard
               boldText="BAKERYSWAP"

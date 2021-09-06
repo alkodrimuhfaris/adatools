@@ -3,7 +3,7 @@ import SvgIconCustom from "./SvgIconCustom";
 
 export default function Footer() {
   return (
-    <div className="bg-160b2c pt-5">
+    <div className="bg-160b2c container pt-5">
       <div className="container">
         <div className="footer-wrapper">
           <p className="footer-text">
