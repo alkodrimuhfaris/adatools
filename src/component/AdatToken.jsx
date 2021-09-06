@@ -44,10 +44,10 @@ export default function AdatToken() {
       </div>
       <div className="adat-right">
         <div className="shadow-lg card-pie h-100 position-relative row no-gutters">
-          <div className="chart-pie-container col-md-6 col-lg-7 col-12">
+          <div className="chart-pie-container col-xl-12 col-xxl-7 col-12">
             <Chart data={data} />
           </div>
-          <div className="col-md-6 col-lg-4 col-12 d-flex align-items-center">
+          <div className="col-xl-12 col-xxl-5 col-12 d-flex align-items-center">
             <ul
               className="d-flex flex-wrap p-0 w-100"
               style={{
@@ -70,7 +70,7 @@ export default function AdatToken() {
                       }}
                     />
                     <span
-                      className="small" /*style={{fontWeight: 'bold'}}*/
+                      className="small ver-1 font-bold" /*style={{fontWeight: 'bold'}}*/
                     >{`${val.label}: ${val.value}%`}</span>
                   </li>
                 );
