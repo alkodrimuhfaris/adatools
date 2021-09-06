@@ -1,15 +1,13 @@
 export default {
-  editTheme: (theme = "light") => {
-    localStorage.setItem("theme", theme);
+  editTheme: (theme = "dark") => {
     return {
       type: "EDIT_THEME",
       payload: theme,
     };
   },
-  toggleTheme: (theme = "light") => {
-    localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
+  toggleTheme: (theme = "dark") => {
     return {
-      type: "EDIT_THEME",
+      type: "TOGGLE_THEME",
       payload: theme === "dark" ? "light" : "dark",
     };
   },

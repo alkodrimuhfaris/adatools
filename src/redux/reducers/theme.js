@@ -13,5 +13,12 @@ export default (state = initialState, action) => {
         theme: action.payload,
       };
     }
+    case "TOGGLE_THEME": {
+      const theme = state.theme === 'dark' ? 'light' : 'dark'
+      return {
+        ...state,
+        theme,
+      };
+    }
   }
 };
