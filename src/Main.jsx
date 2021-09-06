@@ -8,70 +8,70 @@ import RoadMap from "./component/RoadMap";
 import SvgIconArrow from "./component/SvgIconArrow";
 import SvgIconCustom from "./component/SvgIconCustom";
 import UserPlans from "./component/UserPlans";
+import useVisibility from "./helpers/useVisibilityRef";
 
 export default function Main() {
   const goToDashboard = () => {
     window.location.href = "/app/bsc/main";
   };
+  const [refTop, topIsStilVisible] = useVisibility({ treshold: 1 });
+
   return (
     <>
-      <div className="bg-purple pt-3">
-        {/* navbar  */}
-        <Container>
-          <Navbar style={{zIndex: 99}} expand="lg">
-            <Container>
-              <Navbar.Brand href="#home">
-                <img
-                  src="/assets/logo.png"
-                  height="30"
-                  className="d-inline-block align-top"
-                  alt="ADA Logo"
-                />
-              </Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse
-                className="justify-content-end"
-                id="responsive-navbar-nav"
-              >
-                <Nav>
-                  <Nav.Link
-                    href="#home"
-                    className="text-white mx-1 fw-bolder"
-                    onClick={goToDashboard}
-                  >
-                    App ADA Tools
-                  </Nav.Link>
-                  <Nav.Link
-                    href="#features"
-                    className="text-white mx-1 fw-bolder"
-                  >
-                    Manifesto
-                  </Nav.Link>
-                  <Nav.Link
-                    href="#pricing"
-                    className="text-white mx-1 fw-bolder"
-                  >
-                    ADAT Token
-                  </Nav.Link>
-                  <Nav.Link
-                    href="#pricing"
-                    className="text-white mx-1 fw-bolder"
-                  >
-                    Contact
-                  </Nav.Link>
-                  <Button
-                    className="button-blue mx-1 fw-bolder"
-                    onClick={goToDashboard}
-                  >
-                    Launch App
-                  </Button>
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </Container>
-
-        <div className="container layout-resp">
+      {/* navbar  */}
+      <div
+        className={`raleway-font pt-2 navbar-landing ${
+          topIsStilVisible ? "transparent" : ""
+        }`}
+      >
+        <Navbar className="navbar-dark" style={{ zIndex: 99 }} expand="lg">
+          <Container>
+            <Navbar.Brand href="#home">
+              <img
+                src="/assets/logo.png"
+                height="30"
+                className="d-inline-block align-top"
+                alt="ADA Logo"
+              />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse
+              className="justify-content-end"
+              id="responsive-navbar-nav"
+            >
+              <Nav>
+                <Nav.Link
+                  href="#home"
+                  className="text-white mx-1 fw-bolder"
+                  onClick={goToDashboard}
+                >
+                  App ADA Tools
+                </Nav.Link>
+                <Nav.Link
+                  href="#features"
+                  className="text-white mx-1 fw-bolder"
+                >
+                  Manifesto
+                </Nav.Link>
+                <Nav.Link href="#pricing" className="text-white mx-1 fw-bolder">
+                  ADAT Token
+                </Nav.Link>
+                <Nav.Link href="#pricing" className="text-white mx-1 fw-bolder">
+                  Contact
+                </Nav.Link>
+                <Button
+                  className="button-blue mx-1 fw-bolder"
+                  onClick={goToDashboard}
+                >
+                  Launch App
+                </Button>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </div>
+      <div ref={refTop} className="bg-purple pt-8 lato-font">
+        <div className="container my-0 layout-resp">
           <div className="left-side ">
             <h1 className="big-text mb-3">BOOST YOUR EXCHANGE EXPERIENCE</h1>
             <p className="mb-0">
@@ -98,13 +98,13 @@ export default function Main() {
           </div>
         </div>
 
-        <div className="expand-more">
+        <button className="expand-more">
           {/* <ArrowExpand className="text-white" /> */}
           <SvgIconArrow />
-        </div>
+        </button>
 
         <div className="text-white text-center container container ver-1 font-large">
-          <p className="py-5 px-5">
+          <p className="py-2 px-5">
             If you are an ADA user, and you want to be able to anticipate market
             <br />
             movements and develop better trading strategies, ADA Tools will help
@@ -145,7 +145,7 @@ export default function Main() {
       </div>
 
       <Container>
-        <p className="features-title font-large text-spaced purple-text ver-1">
+        <p className="features-title font-title text-spaced purple-text ver-1">
           FEATURES
         </p>
         <FeaturesMenu />
@@ -160,7 +160,7 @@ export default function Main() {
         <Container className="user-plan-wrap-2 pt-3">
           {/* <div className="material-icons arrow-down-white text-center">arrow_drop_down</div> */}
 
-          <p className="sub-size text-center pt-5 mb-0 ver-1 font-large text-spaced text-white">
+          <p className="sub-size text-center pt-5 mb-0 ver-1 font-title text-spaced text-white">
             USER PLANS
           </p>
           <p className="text-center text-white mb-4 mt-2">
@@ -182,7 +182,7 @@ export default function Main() {
           <img src="/assets/bg2.png" alt="background" />
         </div>
         <Container className="roadmap-wrap-2 pt-5">
-          <div className="roadmap-title ver-1 text-spaced font-large">
+          <div className="roadmap-title ver-1 text-spaced font-title">
             ROADMAP
           </div>
 
@@ -200,7 +200,7 @@ export default function Main() {
       </div>
 
       <div className="bg-grey adat-token-wrap">
-        <div className="adat-token-title container pt-5 ver-1 purple-text text-spaced-sm font-large">
+        <div className="adat-token-title container pt-5 ver-1 purple-text text-spaced-sm font-title">
           ADAT TOKEN
         </div>
 
@@ -241,8 +241,8 @@ export default function Main() {
 
           <div className="footer-wrapper">
             <p className="footer-text">
-              <p className="d-flex ver-1 font-litle-large justify-content-center align-items-center ms-1">
-                <span className="material-icons">copyright</span>
+              <p className="d-flex ver-1 font-litle-large ms-1">
+                <span style={{fontSize: '1em', paddingTop: '0.23em'}} className="material-icons">copyright</span>
                 <span
                   style={{ marginLeft: "0.5em" }}
                   className="font-bold ver-1"
@@ -295,7 +295,6 @@ export default function Main() {
               </div>
             </div>
           </div>
-        
         </Container>
       </div>
     </>

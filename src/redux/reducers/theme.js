@@ -1,5 +1,5 @@
 const initialState = {
-  theme: 'light',
+  theme: 'dark',
 };
 
 export default (state = initialState, action) => {

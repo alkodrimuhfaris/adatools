@@ -87,6 +87,9 @@ body {
 
 // ver-1 = additional classes made for revision
 .ver-1 {
+  &.font-title {
+    font-size: 2.1rem;
+  }
   &.font-large {
     font-size: 2em;
   }

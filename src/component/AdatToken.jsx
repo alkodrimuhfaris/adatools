@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Card,
-} from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import Chart from "../component/Chart";
 const data = [
   { value: 67.5, label: "Circulating", color: "#00D6FF" },
@@ -14,7 +11,7 @@ const data = [
 
 export default function AdatToken() {
   return (
-    <div className="container adat-wrapper" style={{ minHeight: "300px" }}>
+    <div className="container adat-wrapper" style={{ minHeight: "340px" }}>
       <div className="adat-left">
         <div className="wrapper">
           <p className="name">Token Name:</p>
@@ -45,49 +42,42 @@ export default function AdatToken() {
           *Marketing, developments and ADATshare tokens are locked
         </div>
       </div>
-      <div className="adat-right" style={{ height: "90%", minHeight: "250px" }}>
-        <Card className="shadow h-100 position-relative">
-          <div style={{ height: "80%", minHeight: "200px" }}>
+      <div className="adat-right">
+        <div className="shadow-lg card-pie h-100 position-relative row no-gutters">
+          <div className="chart-pie-container col-md-6 col-lg-7 col-12">
             <Chart data={data} />
           </div>
-          <div style={{ height: "20%" }} className="position-relative">
-            <div
-              style={{ bottom: 0, right: 0 }}
-              className="position-absolute w-100"
+          <div className="col-md-6 col-lg-4 col-12 d-flex align-items-center">
+            <ul
+              className="d-flex flex-wrap p-0 w-100"
+              style={{
+                listStyle: "none",
+              }}
             >
-              <ul
-                className="pr-2 d-flex flex-wrap"
-                style={{
-                  listStyle: "none",
-                  marginBottom: "0.1em",
-                  padding: "0 0.5em",
-                }}
-              >
-                {data.map((val, idx) => {
-                  return (
-                    <li
-                      key={idx}
-                      style={{ color: "#46297c", width: "50%" }}
-                      className="d-flex align-items-center"
-                    >
-                      <div
-                        style={{
-                          width: "10px",
-                          marginRight: "0.5em",
-                          height: "10px",
-                          backgroundColor: val.color,
-                        }}
-                      />
-                      <span
-                        className="small" /*style={{fontWeight: 'bold'}}*/
-                      >{`${val.label}: ${val.value}%`}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+              {data.map((val, idx) => {
+                return (
+                  <li
+                    key={idx}
+                    style={{ color: "#46297c" }}
+                    className="d-flex align-items-center list-pie"
+                  >
+                    <div
+                      style={{
+                        width: "10px",
+                        marginRight: "0.5em",
+                        height: "10px",
+                        backgroundColor: val.color,
+                      }}
+                    />
+                    <span
+                      className="small" /*style={{fontWeight: 'bold'}}*/
+                    >{`${val.label}: ${val.value}%`}</span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   );

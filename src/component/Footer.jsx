@@ -7,8 +7,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-wrapper">
           <p className="footer-text">
-            <p className="d-flex ver-1 font-litle-large justify-content-center align-items-center ms-1">
-              <span className="material-icons">copyright</span>
+            <p className="d-flex ver-1 font-litle-large ms-1">
+            <span style={{fontSize: '1em', paddingTop: '0.23em'}} className="material-icons">copyright</span>
               <span style={{ marginLeft: "0.5em" }} className="font-bold ver-1">
                 ADA Tools 2021 -{" "}
                 <a

@@ -5,7 +5,7 @@ export default function RoadMap() {
   return (
     <Row>
       <Col xs={10} md={3} className="pe-2 mt-5 mx-auto">
-        <Card className="card-bg-purple">
+        <Card className="card-bg-purple h-100">
           <div className="text-center bg-purple text-white top py-2 fw-bolder">
             2021 Q1
           </div>
@@ -22,7 +22,7 @@ export default function RoadMap() {
         </Card>
       </Col>
       <Col xs={10} md={3} className="px-2 mt-5 mx-auto">
-        <Card className="card-bg-purple">
+        <Card className="card-bg-purple h-100">
           <div className="text-center bg-purple text-white top py-2 fw-bolder">
             2021 Q2
           </div>
@@ -39,7 +39,7 @@ export default function RoadMap() {
         </Card>
       </Col>
       <Col xs={10} md={3} className="px-2 mt-5 mx-auto">
-        <Card className="card-bg-purple">
+        <Card className="card-bg-purple h-100">
           <div className="text-center bg-purple text-white top py-2 fw-bolder">
             2021 Q3
           </div>
@@ -53,7 +53,7 @@ export default function RoadMap() {
         </Card>
       </Col>
       <Col xs={10} md={3} className="pe-2 mt-5 mx-auto">
-        <Card className="card-bg-purple">
+        <Card className="card-bg-purple h-100">
           <div className="text-center bg-purple text-white top py-2 fw-bolder">
             2021 Q4
           </div>

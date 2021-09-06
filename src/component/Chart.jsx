@@ -11,12 +11,12 @@ export default function Chart({data = []}) {
   useLayoutEffect(() => {
     let x = am4core.create("chartdiv", am4charts.PieChart3D);
     x.innerRadius = am4core.percent(30);
-    x.radius = am4core.percent(60)
+    x.radius = am4core.percent(80)
     // x.legend = new am4charts.Legend();
 
     
     x.data = data;
-    x.depth = 30;
+    x.depth = 40;
     let series = x.series.push(new am4charts.PieSeries3D());
     series.dataFields.category = "label";
     series.dataFields.value = "value";

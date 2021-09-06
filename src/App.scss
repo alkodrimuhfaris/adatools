@@ -1,3 +1,16 @@
+.navbar-landing {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 1000;
+  background-color: #36065c;
+  transition: 0.3s ease;
+  &.transparent {
+    background-color: transparent !important;
+    transition: 0.3s ease;
+  }
+}
+
 @media (max-width: 767px) {
   .big-text {
     color: white;
@@ -207,9 +220,21 @@
     }
 
     .adat-right {
-      // width: 50%;
+      width: 100%;
+      padding: 0px 1em;
       position: relative;
       padding-bottom: 3rem;
+      .card-pie {
+        background-color: #fefefe;
+        border-radius: 10px;
+        & .list-pie {
+          width: 50%;
+        }
+        & .chart-pie-container {
+          // height: 80%;
+          min-height: 300px;
+        }
+      }
     }
   }
 
@@ -280,24 +305,47 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .right-side {
-    height: 400px !important;
+    height: 480px !important;
+  }
+  .expand-more {
+    top: 550px;
   }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .right-side {
-    height: 450px !important;
+    height: 500px !important;
+  }
+  .expand-more {
+    top: 550px;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .right-side {
-    height: 600px !important;
+    height: 580px !important;
+  }
+  .expand-more {
+    top: 620px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .right-side {
+    height: 650px !important;
+    max-height: 650px !important;
+  }
+  .expand-more {
+    top: 700px;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 768px) {
+  .pt-8 {
+    padding-top: 7em;
+  }
+
   .big-text {
     color: white;
     font-size: 50px;
@@ -330,6 +378,12 @@
   }
 
   .expand-more {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    left: 50vw;
+    transform: translateX(-50%);
+    position: absolute;
     cursor: pointer;
     text-align: center;
   }
@@ -525,6 +579,20 @@
       position: absolute;
       right: 0;
       top: 0;
+      height: 90%;
+      min-height: 300px;
+      width: 40%;
+      .card-pie {
+        background-color: #fefefe;
+        border-radius: 10px;
+        & .list-pie {
+          width: 100%;
+        }
+        & .chart-pie-container {
+          // height: 80%;
+          min-height: 200px;
+        }
+      }
     }
   }
 
