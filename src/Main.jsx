@@ -21,7 +21,7 @@ export default function Main() {
       {/* navbar  */}
       <div
         className={`raleway-font pt-2 navbar-landing ${
-          topIsStilVisible ? "transparent" : ""
+          topIsStilVisible ? "transparent" : "shadow"
         }`}
       >
         <Navbar className="navbar-dark" style={{ zIndex: 99 }} expand="lg">
@@ -83,7 +83,7 @@ export default function Main() {
               and much more.
             </p>
             <Button
-              className="button-blue mx-1 fw-bolder"
+              className="button-blue launch-app-btn mx-1 fw-bolder"
               onClick={goToDashboard}
             >
               Launch App
