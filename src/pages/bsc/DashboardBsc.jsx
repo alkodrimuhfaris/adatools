@@ -210,7 +210,7 @@ export default function Dashboard(props) {
 
         <div className="col-md-6 col-lg-4  col-sm-12 mb-4">
           <div className={`card ${bgCard} mb-4`}>
-            <TitleCard smallText="FEATURED" boldText="PANCAKE" reverse center />
+            <TitleCard smallText="FEATURED" boldText="SPONSORS" reverse center />
 
             <div className="body-card">
               <div className="list-featured">
