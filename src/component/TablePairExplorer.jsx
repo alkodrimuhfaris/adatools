@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import Pagination from "./Pagination";
 import HeadTable from "./HeadTable";
+import SvgIconCustom from "./SvgIconCustom";
+import OthersTable from "./PairExplorer/OthersTable";
 
 export default function TablePairExplorer({ data = [] }) {
   const dispatch = useDispatch();
@@ -39,9 +41,11 @@ export default function TablePairExplorer({ data = [] }) {
       Value: ({ data = "data" }) => {
         return (
           <span
-            className={`col-values clear type ${data === "Sell" ? "sell" : "buy"}`}
+            className={`col-values clear type ${
+              data === "Sell" ? "sell" : "buy"
+            }`}
           >
-            {data}
+            <span>{data}</span>
           </span>
         );
       },
@@ -72,7 +76,7 @@ export default function TablePairExplorer({ data = [] }) {
       actions: null,
       Value: ({ data = "test" }) => (
         <span className="col-values clear priceBNB">{data}</span>
-      ), 
+      ),
     },
     {
       field: "amount",
@@ -98,8 +102,20 @@ export default function TablePairExplorer({ data = [] }) {
       sortAsc: true,
       sortDesc: true,
       actions: null,
-      Value: ({ data = "test" }) => (
-        <span className="col-values clear totalBNB">{data}</span>
+      Value: ({ data = "test", idx = 0 }) => (
+        <div className="col-values clear d-flex align-items-center justify-content-between w-100 totalBNB">
+          <div className="data">{data}</div>
+          <div className="icon">
+            {idx % 3 === 0 ? (
+              <div className="icon-totalbnb-wrapper">
+                <SvgIconCustom
+                  className={["icon-totalbnb"]}
+                  src={"/assets/anonymous.svg"}
+                />
+              </div>
+            ) : null}
+          </div>
+        </div>
       ),
     },
     {
@@ -119,7 +135,9 @@ export default function TablePairExplorer({ data = [] }) {
         }
         return (
           <span className="col-values clear maker">
-            <span className="maker-ellipsed">{middleElipsis(data)}</span>
+            <span className="maker-ellipsed text-blue">
+              {middleElipsis(data)}
+            </span>
             <span className="tooltip-table">{data}</span>
           </span>
         );
@@ -139,58 +157,8 @@ export default function TablePairExplorer({ data = [] }) {
           "desc-3",
           "desc-4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         ],
-      }) => (
-        <span className="col-values actions">
-          <div className="icon-table-container">
-            <button
-              type="button"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-              className="icon-wrapper-table "
-            >
-              <img src="/assets/icons/babydb.png" alt="icon" />
-            </button>
-            <div className="tooltip-table">{toolTips[0]}</div>
-          </div>
-          <div className="icon-table-container">
-            <button
-              type="button"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-              className="icon-wrapper-table"
-            >
-              <img src="/assets/icons/bscscan.png" alt="icon" />
-            </button>
-            <div className="tooltip-table">{toolTips[1]}</div>
-          </div>
-          <div className="icon-table-container">
-            <button
-              type="button"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-              className="icon-wrapper-table"
-            >
-              <img src="/assets/icons/uniswap.png" alt="icon" />
-            </button>
-            <div className="tooltip-table">{toolTips[2]}</div>
-          </div>
-          <div className="icon-table-container">
-            <button
-              type="button"
-              onClick={(event) => {
-                event.preventDefault();
-              }}
-              className="icon-wrapper-table"
-            >
-              <img src="/assets/icons/32.svg" alt="icon" />
-            </button>
-            <div className="tooltip-table">{toolTips[3]}</div>
-          </div>
-        </span>
-      ),
+        idx = 0,
+      }) => <OthersTable idx={idx} data={data} toolTips={toolTips} />,
     },
   ];
 
@@ -208,7 +176,10 @@ export default function TablePairExplorer({ data = [] }) {
   }, []);
 
   return (
-    <div className="table-stylized shadow-no-stylized w-100">
+    <div
+      style={{ maxHeight: 1075 }}
+      className="table-stylized shadow-no-stylized w-100"
+    >
       <table className="w-100">
         <thead className="table-head">
           <tr>
@@ -249,7 +220,7 @@ export default function TablePairExplorer({ data = [] }) {
                   }
                   return (
                     <td key={key2}>
-                      <Value data={data[0]} />
+                      <Value idx={key1} data={data[0]} />
                     </td>
                   );
                 })}

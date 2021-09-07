@@ -520,7 +520,8 @@ export default function SushiLivePairs() {
 
         <Table />
 
-        <div style={{ height: 100, width: "100%" }} />
+        <div style={{ height: '4em', width: "100%" }} />
+
 
       </div>
     </div>

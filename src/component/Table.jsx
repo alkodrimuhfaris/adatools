@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "../redux/actions";
 import Pagination from "./Pagination";
 import HeadTable from "./HeadTable";
+import SvgIconCustom from "./SvgIconCustom";
 
 export default function Table({ data = [] }) {
   const dispatch = useDispatch();
@@ -59,7 +60,7 @@ export default function Table({ data = [] }) {
               }}
               className="icon-wrapper-table "
             >
-              <img src="/assets/icons/babydb.png" alt="icon" />
+              <img src="/assets/pancake.png" alt="icon" />
             </button>
             <div className="tooltip-table">{toolTips[0]}</div>
           </div>
@@ -93,9 +94,12 @@ export default function Table({ data = [] }) {
               onClick={(event) => {
                 event.preventDefault();
               }}
-              className="icon-wrapper-table"
+              className="icon-wrapper-table chain"
             >
-              <img src="/assets/icons/32.svg" alt="icon" />
+              <SvgIconCustom
+                src="/assets/chain.svg"
+                className={["icon-chain"]}
+              />
             </button>
             <div className="tooltip-table">{toolTips[3]}</div>
           </div>
@@ -114,26 +118,54 @@ export default function Table({ data = [] }) {
       }) => (
         <span className="col-values contract-details">
           <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[0] ? "" : "disable"}`}>
-              <img src="/assets/icons/21.svg" alt="icon" />
+            <div
+              className={`icon-wrapper-table contract ${
+                data[0] ? "" : "disable"
+              }`}
+            >
+              <SvgIconCustom
+                src="/assets/icons/21.svg"
+                className={["icon-contract"]}
+              />
             </div>
             <div className="tooltip-table">{toolTips[0]}</div>
           </div>
           <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[1] ? "" : "disable"}`}>
-              <img src="/assets/icons/20.svg" alt="icon" />
+            <div
+              className={`icon-wrapper-table contract ${
+                data[1] ? "" : "disable"
+              }`}
+            >
+              <SvgIconCustom
+                src="/assets/icons/20.svg"
+                className={["icon-contract"]}
+              />
             </div>
             <div className="tooltip-table">{toolTips[1]}</div>
           </div>
           <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[2] ? "" : "disable"}`}>
-              <img src="/assets/icons/19.svg" alt="icon" />
+            <div
+              className={`icon-wrapper-table contract ${
+                data[2] ? "" : "disable"
+              }`}
+            >
+              <SvgIconCustom
+                src="/assets/icons/19.svg"
+                className={["icon-contract"]}
+              />
             </div>
             <div className="tooltip-table">{toolTips[2]}</div>
           </div>
           <div className="icon-table-container">
-            <div className={`icon-wrapper-table ${data[3] ? "" : "disable"}`}>
-              <img src="/assets/icons/18.svg" alt="icon" />
+            <div
+              className={`icon-wrapper-table contract ${
+                data[3] ? "" : "disable"
+              }`}
+            >
+              <SvgIconCustom
+                src="/assets/icons/18.svg"
+                className={["icon-contract"]}
+              />
             </div>
             <div className="tooltip-table">{toolTips[3]}</div>
           </div>

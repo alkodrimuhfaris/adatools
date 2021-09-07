@@ -1,27 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useParams, useRouteMatch } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import actions from "../redux/actions";
 import SvgIcon from "./SvgIcon";
 
 export default function LeftTab(props) {
-  // const sidebarCollapsed = localStorage.getItem('sidebar-collapsed')
-  // const [isExpanded, setIsExpanded] = React.useState(false)
-
   const dispatch = useDispatch();
   const { theme } = useSelector((state) => state.theme);
 
   const { parent, child } = useParams();
-
-  // const handleToggler = () => {
-  //   if (isExpanded) {
-  //     setIsExpanded(false)
-  //     localStorage.setItem('sidebar-collapsed', true)
-  //     return;
-  //   }
-  //   setIsExpanded(true)
-  //   localStorage.removeItem('sidebar-collapse')
-  // }
 
   const goToLandingPage = () => {
     window.location.href = "/";
@@ -319,11 +306,7 @@ export default function LeftTab(props) {
         <img src="/assets/logo.png" alt="logo" className="logo-with-text" />
       </div>
 
-      <div className={
-        props.isMobile
-          ? ""
-          : `ver-1 left-tabs-menu`
-      }>
+      <div className={props.isMobile ? "" : `ver-1 left-tabs-menu`}>
         {parent === "bsc" &&
           bscSidebar.map((i, index) => {
             if (!i.icon && !i.to)
@@ -353,7 +336,19 @@ export default function LeftTab(props) {
               );
             if (i.to)
               return (
-                <Link key={index} to={i.to} replace className="link-wrap">
+                <Link
+                  key={index}
+                  to={i.to}
+                  onClick={() => {
+                    i.to === "pair-explorer"
+                      ? dispatch(
+                          actions.currentPage.changePage("pair-explorer")
+                        )
+                      : dispatch(actions.currentPage.changePage("standard"));
+                  }}
+                  replace
+                  className="link-wrap"
+                >
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
                     {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
@@ -408,7 +403,20 @@ export default function LeftTab(props) {
               );
             if (i.to)
               return (
-                <Link key={index} to={i.to} replace className="link-wrap">
+                <Link
+                  key={index}
+                  to={i.to}
+                  onClick={() => {
+                    i.to === "uni-pair-explorer" ||
+                    i.to === "sushi-pair-explorer"
+                      ? dispatch(
+                          actions.currentPage.changePage("pair-explorer")
+                        )
+                      : dispatch(actions.currentPage.changePage("standard"));
+                  }}
+                  replace
+                  className="link-wrap"
+                >
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
                     {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
@@ -462,7 +470,19 @@ export default function LeftTab(props) {
               );
             if (i.to)
               return (
-                <Link key={index} to={i.to} replace className="link-wrap">
+                <Link
+                  key={index}
+                  to={i.to}
+                  onClick={() => {
+                    i.to === "pair-explorer"
+                      ? dispatch(
+                          actions.currentPage.changePage("pair-explorer")
+                        )
+                      : dispatch(actions.currentPage.changePage("standard"));
+                  }}
+                  replace
+                  className="link-wrap"
+                >
                   <div className={child === i.to ? "t-selected " : "tab-menu "}>
                     {i.icon !== "" && <SvgIcon src={i.icon} />}
                     <p className={`text-menu ${props.theme}`}>{i.name} </p>
@@ -471,7 +491,6 @@ export default function LeftTab(props) {
               );
           })}
       </div>
-
     </div>
   );
 }
