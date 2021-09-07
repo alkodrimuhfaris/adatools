@@ -239,7 +239,7 @@ export default function Main() {
             take any action.
           </p>
 
-          <div className="footer-wrapper">
+          <div className="footer-wrapper mt-4">
             <p className="footer-text">
               <p className="d-flex ver-1 font-litle-large ms-1">
                 <span style={{fontSize: '1em', paddingTop: '0.23em'}} className="material-icons">copyright</span>
