@@ -106,7 +106,7 @@ body {
     font-size: 0.7em !important;
   }
   &.text-spaced {
-    letter-spacing: 0.25em;
+    letter-spacing: 0.12em;
   }
   &.text-spaced-sm {
     letter-spacing: 0.15em;
@@ -248,6 +248,10 @@ body {
       }
     }
   }
+}
+
+.card.user-plan, .card.roadmap {
+  box-shadow: 0px 8px 16px #0e0217 !important;
 }
 
 // animation
@@ -1712,22 +1716,25 @@ body {
 }
 
 .live-trading-button {
-  background-color: #00ff01;
-  color: white;
+  outline: none;
   border: none;
-  border-radius: 8px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 100px;
-  height: 70%;
-  span {
-    vertical-align: initial;
-    font-size: 11px;
+  height: 2em;
+  border-radius: 5px;
+  width: 8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ff01;
+  & .text {
+    color: white !important;
+    font-weight: bold;
   }
-  .material-icons {
-    font-size: 13px;
-    vertical-align: middle;
-    margin-right: 5px;
+  & .litle-dot {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 100px;
+    background-color: #fff;
+    margin-right: 0.3em;
   }
 }
 
@@ -1858,34 +1865,42 @@ body {
   max-height: 600px;
   border-radius: 10px;
   overflow: auto;
+  position: relative;
+  display: block;
+  
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   &::-webkit-scrollbar {
-    display: block !important;
-    background-color: #1a0f23 !important;
-    .light & {
-      background-color: #e5ddf3 !important;
-    }
-    width: 10px; /* width of the entire scrollbar */
+    display: none;
   }
+  // &::-webkit-scrollbar {
+  //   display: block !important;
+  //   background-color: hsl(273, 40%, 10%) !important;
+  //   .light & {
+  //     background-color: #e5ddf3 !important;
+  //   }
+  //   width: 10px; /* width of the entire scrollbar */
+  // }
 
-  &::-webkit-scrollbar-track {
-    background: #e5e5e5 !important; /* color of the tracking area */
-    background-color: #1a0f23 !important;
-    .light & {
-      background-color: #e5ddf3 !important;
-    }
-  }
+  // &::-webkit-scrollbar-track {
+  //   background: #e5e5e5 !important; /* color of the tracking area */
+  //   background-color: #1a0f23 !important;
+  //   .light & {
+  //     background-color: #e5ddf3 !important;
+  //   }
+  // }
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 20px; /* roundness of the scroll thumb */
-    // border: 1.5px solid #eee;
-    background-color: #0e0217 !important;
-    border: 2.5px solid #1a0f23 !important;
-    .light & {
-      border: 2.5px solid #e5ddf3 !important;
-      background-color: #ababab !important; /* color of the scroll thumb */
-      // border: 1.5px solid #eee;
-    }
-  }
+  // &::-webkit-scrollbar-thumb {
+  //   border-radius: 20px; /* roundness of the scroll thumb */
+  //   // border: 1.5px solid #eee;
+  //   background-color: #0e0217 !important;
+  //   border: 2.5px solid #1a0f23 !important;
+  //   .light & {
+  //     border: 2.5px solid #e5ddf3 !important;
+  //     background-color: #ababab !important; /* color of the scroll thumb */
+  //     // border: 1.5px solid #eee;
+  //   }
+  // }
   & table {
     background-color: #1a0f23;
     color: white;
@@ -1978,6 +1993,7 @@ body {
   }
   & .table-foot {
     position: sticky;
+    position: -webkit-sticky;
     bottom: -1px;
     // padding: 1em 1.5em;
     height: 4.5em;

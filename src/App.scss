@@ -11,6 +11,14 @@
   }
 }
 
+.user-plan {
+  hr {
+    width: 100% !important;
+    height: 3px;
+    background-color: #a18bb3;
+  }
+}
+
 @media (max-width: 767px) {
   .launch-app-btn {
     box-shadow: 0px 20px 50px 0px #8f278e;
@@ -18,8 +26,9 @@
 
   .big-text {
     color: white;
+    font-family: 'Lato', sans-serif;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .layout-resp {
@@ -236,7 +245,7 @@
         }
         & .chart-pie-container {
           // height: 80%;
-          min-height: 300px;
+          min-height: calc(300px);
         }
       }
     }
@@ -401,30 +410,31 @@
     // box-shadow: 0px 20px 30px -10px #8f278e;
     position: relative;
     z-index: 10;
-    &::before {
-      position: absolute;
-      // display: none;
-      content: "";
-      bottom: 0px;
-      left: 0px;
-      width: 100%;
-      height: 80%;
-      border-radius: 300px;
-      background-color: transparent;
-      box-shadow: 0px 20px 20px -10px #8f278e;
-      transition: 0.5s ease;
-    }
-    transition: 0.5s ease;
-    &:hover {
-      transition: 0.5s ease;
-      transform: translateY(-5px);
-      &::before {
-        // display: block;
-        transition: 0.5s ease;
-        height: 100%;
-        transform: translateY(+5px);
-      }
-    }
+    box-shadow: 0px 20px 20px -10px #8f278e;
+    // &::before {
+    //   position: absolute;
+    //   // display: none;
+    //   content: "";
+    //   bottom: 0px;
+    //   left: 0px;
+    //   width: 100%;
+    //   height: 80%;
+    //   border-radius: 300px;
+    //   background-color: transparent;
+    //   box-shadow: 0px 20px 20px -10px #8f278e;
+    //   transition: 0.5s ease;
+    // }
+    // transition: 0.5s ease;
+    // &:hover {
+    //   transition: 0.5s ease;
+    //   transform: translateY(-5px);
+    //   &::before {
+    //     // display: block;
+    //     transition: 0.5s ease;
+    //     height: 100%;
+    //     transform: translateY(+5px);
+    //   }
+    // }
   }
 
   .pt-8 {
@@ -434,7 +444,7 @@
   .big-text {
     color: white;
     font-size: 50px;
-    font-weight: bold;
+    font-weight: 900;
   }
 
   .layout-resp {
@@ -442,14 +452,15 @@
     flex-direction: row;
     margin-top: 3rem;
     padding-top: 3rem;
+    width: 100% !important;
     .right-side {
-      width: 55%;
+      width: 55% !important;
       position: relative;
       max-height: 600px;
       min-height: 400px;
-      padding-top: -20px;
-      padding-left: 50px;
-      padding-right: 50px;
+      // padding-top: -20px;
+      // padding-left: 50px;
+      // padding-right: 50px;
       .img-illustration {
         position: absolute;
         top: -13em;
@@ -531,7 +542,7 @@
     display: flex;
     margin-bottom: 4em;
     .f-left-wrapper {
-      width: 45% !important;
+      width: 40% !important;
     }
     .f-left {
       width: calc(100% - 3.5em) !important;
@@ -541,22 +552,24 @@
       .pool {
         &.selected {
           height: 3.5em;
-          background-color: lightgray;
+          background-color: #ebebeb;
           position: relative;
           & span {
-            font-weight: bold;
-            color: #46297c;
-            font-size: 1.25em;
+            font-weight: 900;
+            color: #36065c;
+            font-size: 1.5em;
           }
           & .icons-feature {
-            fill: #46297c;
+            width: 1.5;
+            height: 1.5;
+            fill: #36065c;
           }
           &::after {
             content: "";
             position: absolute;
             top: 0;
             right: calc(-3.5em + 1px);
-            border-left: 1.75em solid lightgray;
+            border-left: 1.75em solid #ebebeb;
             border-right: 1.75em solid transparent;
             border-top: 1.75em solid transparent;
             border-bottom: 1.75em solid transparent;
@@ -566,7 +579,7 @@
           fill: #222;
         }
         font-weight: normal;
-        font-size: 1.1em;
+        font-size: 1.4em;
         color: #222;
       }
       & .desc-wrapper {
@@ -665,7 +678,10 @@
       right: 0;
       top: 0;
       height: 90%;
-      min-height: 300px;
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      min-height: calc(300px + 1em);
       width: 40%;
       .card-pie {
         background-color: #fefefe;
@@ -795,7 +811,7 @@ body {
 }
 
 .button-blue {
-  background-color: turquoise;
+  background-color: #34c6dc;
   color: white;
   border: none;
   border-radius: 25px;
@@ -824,6 +840,7 @@ body {
 
 .img-illustration {
   width: 100%;
+  // max-width: 500px !important;
 }
 
 .sub-size {

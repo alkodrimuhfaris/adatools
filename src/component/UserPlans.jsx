@@ -6,7 +6,7 @@ export default function UserPlans() {
   return (
     <Row>
       <Col xs={10} md={4} className="pe-2 my-3 border-0 mx-auto">
-        <Card className="card-radius px-2 py-1 h-auto">
+        <Card className="card-radius user-plan px-2 py-1 h-auto">
           <Card.Body className="card-wrapper">
             <h4 className="text-purple ver-1 font-bold">FREE</h4>
             <hr className="text-purple" />
@@ -50,7 +50,7 @@ export default function UserPlans() {
         </Card>
       </Col>
       <Col xs={10} md={4} className="px-2 my-3 mx-auto">
-        <Card className="card-radius px-2 py-1 h-auto">
+        <Card className="card-radius user-plan px-2 py-1 h-auto">
           <Card.Body className="card-wrapper">
             <h4 className="text-purple ver-1 font-bold">Standard</h4>
             <p className=" ver-1 font-bold">$100 paid in ADAT/Monthly subscription -or- 1,000 ADAT/Hold*</p>
@@ -117,7 +117,7 @@ export default function UserPlans() {
         </Card>
       </Col>
       <Col xs={10} md={4} className="pe-2 mt-3 mx-auto">
-        <Card className="card-radius px-2 py-1 h-auto premium">
+        <Card className="card-radius user-plan px-2 py-1 h-auto premium">
           <Card.Body className="card-wrapper">
             <h4 className="text-purple ver-1 font-bold">Premium</h4>
             <p className=" ver-1 font-bold">1,000 ADAT/Hold*</p>

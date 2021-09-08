@@ -21,7 +21,7 @@ export default function Main() {
       {/* navbar  */}
       <div
         className={`raleway-font pt-2 navbar-landing ${
-          topIsStilVisible ? "transparent" : "shadow"
+          topIsStilVisible ? "" : "shadow"
         }`}
       >
         <Navbar className="navbar-dark" style={{ zIndex: 99 }} expand="lg">
@@ -70,16 +70,16 @@ export default function Main() {
           </Container>
         </Navbar>
       </div>
-      <div ref={refTop} className="bg-purple pt-8 lato-font">
+      <div ref={refTop} className="bg-purple w-100 pt-8 lato-font">
         <div className="container my-0 layout-resp">
           <div className="left-side ">
-            <h1 className="big-text mb-3">BOOST YOUR EXCHANGE EXPERIENCE</h1>
+            <h1 className="big-text mb-3">BOOST YOUR <br /> EXCHANGE <br /> EXPERIENCE</h1>
             <p className="mb-0">
-              Real time data analysis at the tips of your fingers:
             </p>
-            <p className="mb-4">
-              Create unique trading strategies, anticipate market movements,
-              search for big spreads, track and copy the most profitable wallets
+            <p className="mb-4 mt-2">
+              Real time data analysis at the tips of your fingers: <br />
+              Create unique trading strategies, anticipate market movements, <br />
+              search for big spreads, track and copy the most profitable wallets <br />
               and much more.
             </p>
             <Button
@@ -103,7 +103,7 @@ export default function Main() {
           <SvgIconArrow />
         </button>
 
-        <div className="text-white text-center container container ver-1 font-large">
+        <div className="text-white text-center container container ver-1 font-large mb-4">
           <p className="py-2 px-5">
             If you are an ADA user, and you want to be able to anticipate market
             <br />
@@ -116,35 +116,35 @@ export default function Main() {
         <div className="how-wrap">
           <div className="how-wrapper">
             <div className="mx-2">
-              <img src="/assets/how_5.png" alt="responsive" />
-              <h4>RESPONSIVE</h4>
+              <img className="mb-2" src="/assets/how_5.png" alt="responsive" />
+              <h4 className="mt-3">RESPONSIVE</h4>
               <p>ADA Tools works on any device: desktop, tablet or mobile.</p>
             </div>
             <div className="mx-2">
-              <img src="/assets/how_4.png" alt="responsive" />
-              <h4>SUBSCRIPTION</h4>
+              <img className="mb-2" src="/assets/how_4.png" alt="responsive" />
+              <h4 className="mt-3">SUBSCRIPTION</h4>
               <p>Purchase ADAT via exchanges to enable ADAT subscriptions.</p>
             </div>
             <div className="mx-2">
-              <img src="/assets/how_3.png" alt="responsive" />
-              <h4>STORE YOUR DATA</h4>
+              <img className="mb-2" src="/assets/how_3.png" alt="responsive" />
+              <h4 className="mt-3">STORE YOUR DATA</h4>
               <p>Save your data and access it from any device.</p>
             </div>
             <div className="mx-2">
-              <img src="/assets/how_2.png" alt="responsive" />
-              <h4>NOTIFICATIONS</h4>
+              <img className="mb-2" src="/assets/how_2.png" alt="responsive" />
+              <h4 className="mt-3">NOTIFICATIONS</h4>
               <p>Set up your live notifications.</p>
             </div>
             <div className="mx-2">
-              <img src="/assets/how_1.png" alt="responsive" />
-              <h4>BOTS</h4>
+              <img className="mb-2" src="/assets/how_1.png" alt="responsive" />
+              <h4 className="mt-3">BOTS</h4>
               <p>Create unique trading strategies for maximum profitability.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <Container>
+      <Container className="w1-100">
         <p className="features-title font-title text-spaced purple-text ver-1">
           FEATURES
         </p>
@@ -153,7 +153,7 @@ export default function Main() {
         </div> */}
       </Container>
 
-      <div className="bg-purple user-plan-wrap">
+      <div className="bg-purple w-100 overflow-hidden user-plan-wrap">
         <div className="bg1">
           <img src="/assets/bg1.png" alt="background" />
         </div>
@@ -171,13 +171,13 @@ export default function Main() {
 
           <div className="f-small text-white text-center mt-5 pb-5">
             *Hold means that you must have the neccessary token in your wallet
-            at the time of sign in and login, this process will be done through
+            at the time of sign in and login, this<br />process will be done through
             any compatible wallet.
           </div>
         </Container>
       </div>
 
-      <div className="bg-black roadmap-wrap">
+      <div className="bg-black w-100 overflow-hidden roadmap-wrap">
         <div className="bg2">
           <img src="/assets/bg2.png" alt="background" />
         </div>
@@ -191,15 +191,15 @@ export default function Main() {
           <div className="mt-5 f-small text-white text-center pb-5">
             This is a floating roadmap, so timelines are flexible. This is
             beacouse we must be agile and responsive to industry, technological
-            and community needs. In fact, many of our existing and feature
-            features are community requests. So please do understand that this
+            and <br /> community needs. In fact, many of our existing and feature
+            features are community requests. So please do understand that this <br />
             roadmap, espescially for items outside of imminent release, is
             subject to charge.
           </div>
         </Container>
       </div>
 
-      <div className="bg-grey adat-token-wrap">
+      <div className="bg-grey w-100 overflow-hidden adat-token-wrap">
         <div className="adat-token-title container pt-5 ver-1 purple-text text-spaced-sm font-title">
           ADAT TOKEN
         </div>
@@ -207,7 +207,7 @@ export default function Main() {
         <AdatToken />
       </div>
 
-      <div className="safegram-wrap">
+      <div className="safegram-wrap w-100 overflow-hidden">
         <div className="container d-flex flex-column align-items-center justify-content-center">
           <p className="ver-1 font-pretty-large text-spaced-sm">PARTNER</p>
           <img
@@ -219,7 +219,7 @@ export default function Main() {
         </div>
       </div>
 
-      <div className="bg-purple pt-5">
+      <div className="bg-purple w-100 overflow-hidden pt-5">
         <Container>
           <p className="footer-text">
             All contents are available on our website, on hyperlinked websites,

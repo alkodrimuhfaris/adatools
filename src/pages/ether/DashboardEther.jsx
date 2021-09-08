@@ -407,9 +407,9 @@ export default function DashboardEther(props) {
                         <p>GREENFI</p>
                       </div>
                     </div>
-                    <button className="live-trading-button ml-auto">
-                      <i className="material-icons">fiber_manual_record</i>
-                      <span className="">Live Trading</span>
+                    <button className="live-trading-button">
+                      <span className="litle-dot" />
+                      <span className="text">Live Trading</span>
                     </button>
                   </div>
                   <div className="mb-2">
