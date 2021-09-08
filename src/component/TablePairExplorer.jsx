@@ -177,7 +177,7 @@ export default function TablePairExplorer({ data = [] }) {
 
   return (
     <div
-      style={{ maxHeight: 1075 }}
+      style={{ maxHeight: 1117 }}
       className="table-stylized shadow-no-stylized w-100"
     >
       <table className="w-100">

@@ -45,8 +45,8 @@ export default function MainPairExplorer({ theme }) {
           </div>
         </div>
 
-        <div className="row py-3">
-          <div className="col-6 col-md-12 col-lg-6">
+        <div className="top-main-explorer py-3">
+          <div className="left-top-main-explorer">
             <div className="d-flex justify-content-end">
               <div className="icons-tab">
                 <i className="material-icons me-2">share</i>
@@ -58,40 +58,49 @@ export default function MainPairExplorer({ theme }) {
             <CardAdat />
 
             <div className="row">
-              <div className="col-6 h-100">
+              <div className="col-5 h-100">
                 <Favorites />
               </div>
 
-              <div className="col-6 h-100">
+              <div className="col-7 h-100">
                 <Info />
               </div>
             </div>
           </div>
 
-          <div className="col-12 col-md-12 col-lg-6 pt-4">
+          <div className="right-top-main-explorer">
             <Chart />
           </div>
         </div>
 
-        <div className="row">
-          <div className="col-12 my-4 my-lg-0 col-md-12 order-md-2 order-lg-1 col-lg-3">
-            {/* contract detail  */}
-            <ContractDetails />
+        <div className="bottom-main-explorer">
+          <div className="left-bottom-main-explorer">
+            <div className="row">
+              {/* contract detail  */}
+              <div className="col-md-4 col-lg-12">
+                <ContractDetails />
+              </div>
 
-            {/* adat score  */}
-            <CardAdatScore />
-
-            {/* top sponsor  */}
-            <TopSponsor />
-
-            {/* faraland */}
-            <CardFaraland />
-
-            {/* token news  */}
-            <TokenNews />
+              {/* adat score  */}
+              <div className="col-md-4 col-lg-12">
+                <CardAdatScore />
+              </div>
+              {/* top sponsor  */}
+              <div className="col-md-4 col-lg-12">
+                <TopSponsor />
+              </div>
+              {/* faraland */}
+              <div className="col-md-4 col-lg-12">
+                <CardFaraland />
+              </div>
+              {/* token news  */}
+              <div className="col-md-4 col-lg-12">
+                <TokenNews />
+              </div>
+            </div>
           </div>
 
-          <div className="col-12 col-md-12 col-lg-9 order-md-1 order-lg-2 h-100">
+          <div className="right-bottom-main-explorer">
             <PairExplorerTable />
           </div>
         </div>
