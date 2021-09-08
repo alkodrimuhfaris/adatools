@@ -2299,11 +2299,6 @@ body {
             }
           }
         }
-        box-shadow: 4px 4px 4px rgb(0 0 0);
-        transition: box-shadow 1s ease;
-        .light & {
-          box-shadow: 4px 4px 4px #dbd1ef !important;
-        }
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2438,11 +2433,6 @@ body {
         width: 25px;
         border-radius: 50%;
         background-color: white;
-        box-shadow: 4px 4px 4px rgb(0 0 0);
-        transition: box-shadow 1s ease;
-        .light & {
-          box-shadow: 4px 4px 4px #dbd1ef !important;
-        }
         display: flex;
         align-items: center;
         justify-content: center;
