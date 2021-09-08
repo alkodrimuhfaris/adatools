@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import SvgIconCustom from '../component/SvgIconCustom';
 
 export default function Multiswap() {
   const { theme } = useSelector((state) => state.theme);
@@ -19,12 +20,13 @@ export default function Multiswap() {
           </div>
         </div>
         
-        <div className="row mt-4 text-white">
-          <div className="col-sm-12 col-md-6 col-lg-4  "></div>
-          <div className="col-sm-12 col-md-6 col-lg-4  text-center">
+        <div className="d-flex justify-content-center mt-4 text-white">
+          {/* <div className="col-sm-12 col-md-6 col-lg-4  "></div> */}
+          <div className="text-center">
             <div className="d-flex justify-content-center">
               <div className="icon-purple-wrapper">
-                <img src="/assets/icons/13.svg" alt="icon" />
+                <div className="shine-effect"></div>
+                <SvgIconCustom src="/assets/icons/13.svg" className={["multiswap-icon"]} />
               </div>
             </div>
             <h4 className="mt-4 mb-3 fw-bolder">SEARCH AND ADD PAIRS</h4>
@@ -36,7 +38,7 @@ export default function Multiswap() {
             <p className="pt-5">In order for it to work properly please accept uniswap conditions each time you add pair</p>
 
           </div>
-          <div className="col-sm-12 col-md-6 col-lg-4  "></div>
+          {/* <div className="col-sm-12 col-md-6 col-lg-4  "></div> */}
         </div>
         
       </div>
